@@ -1,0 +1,3491 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fpieseljust.github.io/desenvolupament-interficies/unitats/1-python/teoria/5%20-%20Excepcions/">
+      
+      
+        <link rel="prev" href="../4%20-%20Fitxers/">
+      
+      
+        <link rel="next" href="../6%20-%20POO/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Errors i excepcions - Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-tipus-derrors" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-header__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Errors i excepcions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-nav__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 1 - Programació amb Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 1 - Programació amb Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20-%20Control%20de%20fluxe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control de fluxe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3%20-%20Funcions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funcions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20-%20Fitxers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tractament de fitxers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Errors i excepcions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Errors i excepcions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-tipus-derrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Tipus d'errors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-excepcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Excepcions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Excepcions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-excepcions-definides-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Excepcions definides en Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-com-funcionen-les-excepcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Com funcionen les excepcions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-capturant-excepcions-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Capturant excepcions en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Capturant excepcions en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-try-except-finally" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Try ... except ... finally
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-llancant-excepcions-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Llançant excepcions en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Llançant excepcions en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-assert" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Assert
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-excepcions-definides-per-lusuari" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Excepcions definides per l'usuari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Excepcions definides per l'usuari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#501-activitat-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.0.1. Activitat 12
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#502-activitat-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.0.2. Activitat 13
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20-%20POO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programació oorientada a objectes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pràctica 1 - PyGame
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pràctica 1 - PyGame
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/1%20-%20PyGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/2%20-%20Disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disseny del joc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/3%20-%20Sprites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/4%20-%20Imatges/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Imatges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/5%20-%20So/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/6%20-%20Conclusi%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusió
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/tasques/1%20-%20Obligatori/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part I - Base (30%)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/tasques/2%20-%20Projecte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part II - ampliació/projecte (70%)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr%C3%A0ctiques/tasques/3%20-%20Qualificaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualificació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 2 - Introducció a les interfícies d'usuari
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 2 - Introducció a les interfícies d'usuari
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/teoria/1%20-%20Introduccio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció a les interfícies d'usuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/teoria/2%20-%20Usabilitat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Usabilitat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/teoria/3%20-%20Pautes%20de%20Disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Pautes de disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 3 - Introducció a les interfícies d'usuari amb Flet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 3 - Introducció a les interfícies d'usuari amb Flet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/2%20-%20Flet-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Comencem amb Flet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/3%20-%20Layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Contenidors de components. Layouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/4%20-%20Navegacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Navegació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/5%20-%20Dialegs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Diàlegs, alertes i panells
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/6%20-%20Emmagatzematge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 - Emmagatzematge d'informació a través de l'API de Flet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/7%20-%20Aplicacions%20multiusuari/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 - Aplicacions multiusuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/8%20-%20Controls%20definits%20per%20l%27usuari/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 - Controls definits per l'usuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/tasques/2%20-%20Practiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 4 - Introducció a les interfícies d'usuari amb PySide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 4 - Introducció a les interfícies d'usuari amb PySide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Tecnologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/2%20-%20Controls%20%C3%BAs%20com%C3%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Controls d'ús comú
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/3%20-%20Layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Contenidors de components. Disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/4%20-%20Menus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Menús, barres de ferramentes i estat, i components flotants
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/5%20-%20Dialegs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Diàlegs i altres finestres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 5 - Generació d'interfícies a partir de llenguatges de marques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 5 - Generació d'interfícies a partir de llenguatges de marques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/teoria/1-Llenguatges%20de%20marques%20per%20a%20la%20generaci%C3%B3%20d%27interf%C3%ADcies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Llenguatges de marques per a la generació d'interfícies.md
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/teoria/2-Ferramentes%20de%20disseny%20basades%20en%20llenguatges%20de%20marques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Ferramentes de disseny basades en llenguatges de marques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/teoria/3-%C3%9As%20de%20la%20interf%C3%ADcie%20en%20una%20aplicaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Ús de la interfície en una aplicació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/teoria/4-Funcions%20avan%C3%A7ades%20de%20la%20ferramenta%20de%20disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Funcions avançades de la ferramenta de disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 6 - Elaboració d'informes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 6 - Elaboració d'informes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/teoria/1-Introduccio%20als%20informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció als informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/teoria/2-Disseny%20d%27informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Disseny d'informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/teoria/3-Grafics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Elaboració de gràfics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/teoria/4-Aplicacions%20amb%20informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Desenvolupament d'aplicacions amb informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/tasques/practica1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/tasques/practica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 7 - Proves, distribució i documentació d'aplicacions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 7 - Proves, distribució i documentació d'aplicacions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/1-metodologies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Metodologies de desenvolupament de software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/2-tipus-proves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Tipus de proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/3-TDD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Desenvolupament basat en proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/4-cd-ci/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Integració i entrega/desplegament continu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/5-empaquetat-distribucio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Empaquetat i distribució d'aplicacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_1" id="__nav_8_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Activitats resoltes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Activitats resoltes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/1-pytest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 1 - Proves unitàries amb pytest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/2-tdd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 2 - Desenvolupament guiat per proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/3-ci/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 3 - Integració continua
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/4-executable-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 4 - Executable windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/5-instalador-linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 5 - Instal·lador linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_2" id="__nav_8_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pràctiques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pràctiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/1-pytest-cartera/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1 - Proves unitàries amb pytest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/2-pytest-qt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2 - pytest-qt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/3-tdd-fatorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3 - Desenvolupament guiat per proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/4-ci-factorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4 - Integració continua
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/5-executable-instalador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5 - Instal·lador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Informació
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../info/guia_alumne_DI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de l'alumne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Criteris d'avaluació
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Criteris d'avaluació
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../info/qualificacio/rubrica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rúbriques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-tipus-derrors" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Tipus d'errors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-excepcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Excepcions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Excepcions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-excepcions-definides-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Excepcions definides en Python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-com-funcionen-les-excepcions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Com funcionen les excepcions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-capturant-excepcions-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Capturant excepcions en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Capturant excepcions en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-try-except-finally" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Try ... except ... finally
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-llancant-excepcions-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Llançant excepcions en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Llançant excepcions en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-assert" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1. Assert
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-excepcions-definides-per-lusuari" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Excepcions definides per l'usuari
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Excepcions definides per l'usuari">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#501-activitat-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.0.1. Activitat 12
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#502-activitat-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.0.2. Activitat 13
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Errors i excepcions</h1>
+
+<div><h2 id="1-tipus-derrors">1. Tipus d'errors</h2>
+<p>Podem cometre errors mentre programem. Estos errors es poden classificar bàsicament en dos tipus:</p>
+<ol>
+<li>Errors de sintaxi</li>
+<li>Errors en la lògica (Excepcions)</li>
+</ol>
+<p>Els erros de sintaxi es produixen abans de l'execució, mentre que els erros lògics es produixen en temps d'execució.</p>
+<h2 id="2-excepcions">2. Excepcions</h2>
+<p>Algun exemple d'excepció són els següents:</p>
+<ul>
+<li>Quan intentem obrir un fitxer (per llegir) que no existeix (FileNotFoundError)</li>
+<li>Quan intentem dividir un nombre per zero (ZeroDivisionError)</li>
+<li>Quan intentem importar un mòdul que no existeix (ImportError).</li>
+</ul>
+<p>Sempre que es produeixen aquests tipus d’errors d’execució, Python crea un objecte d’excepció. Si no el tractem, interrumpeix l'execució i imprimeix una traça de l'error juntament amb alguns detalls sobre per què ha produït aquest error.</p>
+<h3 id="21-excepcions-definides-en-python">2.1. Excepcions definides en Python</h3>
+<p>Per a consultar totes les excepcions definides podem utilitzar:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">locals</span><span class="p">()[</span><span class="s1">'__builtins__'</span><span class="p">]))</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>ArithmeticError</li>
+<li>AssertionError</li>
+<li>AttributeError</li>
+<li>BaseException</li>
+<li>BlockingIOError</li>
+<li>BrokenPipeError</li>
+<li>BufferError</li>
+<li>ChildProcessError</li>
+<li>ConnectionAbortedError</li>
+<li>ConnectionError</li>
+<li>ConnectionRefusedError</li>
+<li>ConnectionResetError</li>
+<li>EOFError</li>
+<li>EnvironmentError</li>
+<li>Exception</li>
+<li>FileExistsError</li>
+<li>FileNotFoundError</li>
+<li>FloatingPointError</li>
+<li>GeneratorExit</li>
+<li>IOError</li>
+<li>ImportError</li>
+<li>IndentationError</li>
+<li>IndexError</li>
+<li>InterruptedError</li>
+<li>IsADirectoryError</li>
+<li>KeyError</li>
+<li>LookupError</li>
+<li>MemoryError</li>
+<li>ModuleNotFoundError</li>
+<li>NameError</li>
+<li>NotADirectoryError</li>
+<li>NotImplementedError</li>
+<li>OSError</li>
+<li>OverflowError</li>
+<li>PermissionError</li>
+<li>ProcessLookupError</li>
+<li>RecursionError</li>
+<li>ReferenceError</li>
+<li>RuntimeError</li>
+<li>StopAsyncIteration</li>
+<li>SyntaxError</li>
+<li>SystemError</li>
+<li>TabError</li>
+<li>TimeoutError</li>
+<li>TypeError</li>
+<li>UnboundLocalError</li>
+<li>UnicodeDecodeError</li>
+<li>UnicodeEncodeError</li>
+<li>UnicodeError</li>
+<li>UnicodeTranslateError</li>
+<li>ValueError</li>
+</ul>
+<h3 id="22-com-funcionen-les-excepcions">2.2. Com funcionen les excepcions</h3>
+<p>Python llança una d'aquestes excepcions en executar una instrucció que provoca un error. </p>
+<p>Quan es produeixen aquestes excepcions, l'intèrpret de Python detén l'execució del procés actual i el passa al procés que ha fet la crida, fins que algú la tracte. Si ningún procés la tracta, el programa es detendrà.</p>
+<p>Per exemple, considerem un programa en què tenim una funció A que crida a la funció B, que al seu torn crida a la funció C. Si es produeix una excepció a la funció C però no es tracta a C, l’excepció passa a B i després a A.</p>
+<p>Si no es gestiona mai, es mostrarà un missatge d'error i el nostre programa s'aturarà de sobte.</p>
+<h2 id="3-capturant-excepcions-en-python">3. Capturant excepcions en Python</h2>
+<p>A Python, les excepcions es poden gestionar mitjançant una sentència try.</p>
+<p>L'operació crítica que pot generar una excepció es col·loca dins de la clàusula <strong>try</strong>. El codi que gestiona les excepcions s’escriu a la clàusula <strong>except</strong> i s'executarà en produïr-se. Per tant, podem escollir quines operacions es realitzaran una vegada que haguem capturat l'excepció. </p>
+<p>Exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># importem el mòdul sys per veure el tipus d'excepció</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">randomList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">randomList</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Element val "</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>        <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">int</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>        <span class="k">break</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Oops! Excepció capturada --&gt;"</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Següent iteració"</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>        <span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"L'invers de "</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="s2">"és"</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Com totes les excepcions hereden de la superclasse Exception, podem reescriure el programa com:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># importem el mòdul sys per veure el tipus d'excepció</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">randomList</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'a'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">randomList</span><span class="p">:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Element val "</span><span class="p">,</span> <span class="n">element</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>        <span class="n">r</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="nb">int</span><span class="p">(</span><span class="n">element</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>        <span class="k">break</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Oops! Excepció capturada --&gt;"</span><span class="p">,</span> <span class="n">e</span><span class="o">.</span><span class="vm">__class__</span><span class="p">)</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"Següent iteració"</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>        <span class="nb">print</span><span class="p">()</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"L'invers de "</span><span class="p">,</span> <span class="n">element</span><span class="p">,</span> <span class="s2">"és"</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>A l'exemple anterior, no hem utilitzat cap excepció específica a la clàusula except.</p>
+<p>No és una bona pràctica de programació, ja que capturarà totes les excepcions i gestionarà tots els casos de la mateixa manera. Podem especificar quines excepcions hauria de capturar una clàusula except.</p>
+<p>Una clàusula try pot tindre un nombre indeterminat de clàusules except per gestionar diferents excepcions, però, només s'executarà una en cas que es produeixi una excepció.</p>
+<p>Podem utilitzar una tupla de valors per especificar diverses excepcions en una clàusula except.</p>
+<p>Exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>   <span class="c1"># fer alguna cosa</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>   <span class="k">pass</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>   <span class="c1"># manegem ValueError</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>   <span class="k">pass</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="k">except</span> <span class="p">(</span><span class="ne">TypeError</span><span class="p">,</span> <span class="ne">ZeroDivisionError</span><span class="p">):</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>   <span class="c1"># manegem múltiples excepcions</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>   <span class="c1"># TypeError i ZeroDivisionError</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>   <span class="k">pass</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>   <span class="c1"># manegem totes les altres excepcions</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>   <span class="k">pass</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="31-try-except-finally">3.1. Try ... except ... finally</h3>
+<p>La sentència try de Python pot tindre una clàusula final opcional. Aquesta clàusula s’executa independentment de si es produix una excepció o no i s’utilitza generalment per alliberar recursos.</p>
+<p>Per exemple, podem estar connectats a un centre de dades remot a través de la xarxa o treballar amb un fitxer o una interfície gràfica d'usuari (GUI). En totes aquestes circumstàncies, hem de netejar recursos abans que el programa ature la seua execució, tant si ho fa de forma controlada com si es para bruscament. Aquestes accions (tancar un fitxer, GUI o desconnectar de la xarxa) es realitzen normalment a la clàusula final.</p>
+<p>Exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>   <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"test.txt"</span><span class="p">,</span><span class="n">encoding</span> <span class="o">=</span> <span class="s1">'utf-8'</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>   <span class="c1"># operacions amb el fitxer</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>   <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="4-llancant-excepcions-en-python">4. Llançant excepcions en Python</h2>
+<p>Les excepcions es generen normalment quan es produeixen errors en temps d'execució, però també podem generar/llançar excepcions manualment mitjançant la paraula reservada <strong>raise</strong>. Opcionalment, podem passar arguments a l’excepció per aclarir per què s’ha generat aquesta excepció.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>    <span class="n">nombre</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Dona'm un número positiu: "</span><span class="p">))</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="k">if</span> <span class="n">nombre</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">nombre</span><span class="p">)</span> <span class="o">+</span> <span class="s2">" no és un número positiu!"</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">ve</span><span class="p">:</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Excepció capturada:"</span><span class="p">,</span> <span class="n">ve</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="k">except</span><span class="p">:</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Unexpected error:"</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>    <span class="k">raise</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="41-assert">4.1. Assert</h3>
+<p>Amb la paraula reservada <strong>assert</strong> llancem una excepció sempre i quan l'expressió que la segueix s'avalua a <em>Fals</em>. Si s'avalua a <em>True</em>, es continua l'execució del programa de forma seqüencial.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span>
+<span class="normal"><a href="#__codelineno-6-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Introdueix un nombre positiu: "</span><span class="p">))</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>    <span class="k">assert</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">0</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="k">except</span> <span class="ne">AssertionError</span><span class="p">:</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"AssertionError: No és positiu!"</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>    <span class="nb">print</span> <span class="p">(</span><span class="s2">"ValueError: No has introdït un número!"</span><span class="p">)</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"És positiu"</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="5-excepcions-definides-per-lusuari">5. Excepcions definides per l'usuari</h2>
+<p>De vegades necessitem definir excepcions que no estan disponibles a Python quan es dóna alguna condició. En este cas, hem de crear les nostres propies excepcions. Per a fer-ho, hem de definir noves classes que <strong>hereden de <em>Exception</em></strong>, ja siga directa o indirectament. Esta nova excepció que hem creat també podrà ser llançada amb <em>raise</em>. </p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="o">&gt;&gt;&gt;</span><span class="k">class</span> <span class="nc">CustomError</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="o">...</span>    <span class="k">pass</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">raise</span> <span class="n">CustomError</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="o">...</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="n">__main__</span><span class="o">.</span><span class="n">CustomError</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">raise</span> <span class="n">CustomError</span><span class="p">(</span><span class="s2">"S'ha produït un error"</span><span class="p">)</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="o">...</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="n">__main__</span><span class="o">.</span><span class="n">CustomError</span><span class="p">:</span> <span class="n">S</span><span class="s1">'ha produït un error</span>
+</code></pre></div></td></tr></table></div>
+<p>Quan estem desenvolupant un programa gran, és una bona pràctica col·locar totes les excepcions definides per l'usuari que el nostre programa definix en un fitxer separat <em>exceptions.py</em> o <em>errors.py</em>.</p>
+<h4 id="501-activitat-12">5.0.1. Activitat 12</h4>
+<p>Anem a implementar un xicotet joc per consola. El programa generarà un número aleatori entre 0 i 100 (utilitzeu randint() del mòdul random) i demanarà a l'usuari que introduïsca un número.</p>
+<p>Mentre el número siga massa menut, llançarà una excepció ErrorEnterMassaMenut indicant-li-ho. Si per contra és massa gran llançarà ErrorEnterMassaGran.</p>
+<p>Si s'introdueix un valor no numèric, es llançarà una excepció de tipus ErrorNoEsEnter.</p>
+<p>El joc acabarà quan s'introduïsca l'enter buscat, felicitant a l'usuari.</p>
+<h4 id="502-activitat-13">5.0.2. Activitat 13</h4>
+<p>Modifica el codi de l'activitat 11 per a que no es produïsquen errors en l'execució, ja siga per introdïur valor no definits per a les funcions, valors que no són numèrics o operacions desconegudes. Controla també que no es produïsquen errors en la lectura/escriptura dels arxius.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

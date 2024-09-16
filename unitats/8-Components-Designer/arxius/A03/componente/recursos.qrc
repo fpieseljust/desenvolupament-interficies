@@ -1,0 +1,7 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="icons">
+        <file alias="mostrar">icons/visible.png</file>
+        <file alias="ocultar">icons/hidden.png</file>
+    </qresource>
+</RCC>

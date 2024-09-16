@@ -1,0 +1,3571 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fpieseljust.github.io/desenvolupament-interficies/unitats/1-python/pr%C3%A0ctiques/3%20-%20Sprites/">
+      
+      
+        <link rel="prev" href="../2%20-%20Disseny/">
+      
+      
+        <link rel="next" href="../4%20-%20Imatges/">
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Sprites - Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sprites" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-header__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprites
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-nav__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 1 - Programació amb Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 1 - Programació amb Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/2%20-%20Control%20de%20fluxe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control de fluxe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/3%20-%20Funcions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funcions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/4%20-%20Fitxers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tractament de fitxers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/5%20-%20Excepcions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Errors i excepcions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../teoria/6%20-%20POO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programació oorientada a objectes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pràctica 1 - PyGame
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pràctica 1 - PyGame
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1%20-%20PyGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2%20-%20Disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disseny del joc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sprites
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Sprites
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jugadors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jugadors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-dusuari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada d’usuari
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enemics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enemics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4%20-%20Imatges/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Imatges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5%20-%20So/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../6%20-%20Conclusi%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusió
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tasques/1%20-%20Obligatori/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part I - Base (30%)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tasques/2%20-%20Projecte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part II - ampliació/projecte (70%)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tasques/3%20-%20Qualificaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualificació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 2 - Introducció a les interfícies d'usuari
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 2 - Introducció a les interfícies d'usuari
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/teoria/1%20-%20Introduccio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció a les interfícies d'usuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/teoria/2%20-%20Usabilitat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Usabilitat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/teoria/3%20-%20Pautes%20de%20Disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Pautes de disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../2-intro-interficies/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 3 - Introducció a les interfícies d'usuari amb Flet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 3 - Introducció a les interfícies d'usuari amb Flet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/2%20-%20Flet-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Comencem amb Flet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/3%20-%20Layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Contenidors de components. Layouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/4%20-%20Navegacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Navegació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/5%20-%20Dialegs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Diàlegs, alertes i panells
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/6%20-%20Emmagatzematge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 - Emmagatzematge d'informació a través de l'API de Flet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/7%20-%20Aplicacions%20multiusuari/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 - Aplicacions multiusuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/teoria/8%20-%20Controls%20definits%20per%20l%27usuari/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 - Controls definits per l'usuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../3-GUI-Flet/tasques/2%20-%20Practiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 4 - Introducció a les interfícies d'usuari amb PySide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 4 - Introducció a les interfícies d'usuari amb PySide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Tecnologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/2%20-%20Controls%20%C3%BAs%20com%C3%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Controls d'ús comú
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/3%20-%20Layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Contenidors de components. Disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/4%20-%20Menus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Menús, barres de ferramentes i estat, i components flotants
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/teoria/5%20-%20Dialegs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Diàlegs i altres finestres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../4-GUI-PySide6/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 5 - Generació d'interfícies a partir de llenguatges de marques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 5 - Generació d'interfícies a partir de llenguatges de marques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/teoria/1-Llenguatges%20de%20marques%20per%20a%20la%20generaci%C3%B3%20d%27interf%C3%ADcies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Llenguatges de marques per a la generació d'interfícies.md
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/teoria/2-Ferramentes%20de%20disseny%20basades%20en%20llenguatges%20de%20marques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Ferramentes de disseny basades en llenguatges de marques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/teoria/3-%C3%9As%20de%20la%20interf%C3%ADcie%20en%20una%20aplicaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Ús de la interfície en una aplicació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/teoria/4-Funcions%20avan%C3%A7ades%20de%20la%20ferramenta%20de%20disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Funcions avançades de la ferramenta de disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../5-Interficies-LM/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 6 - Elaboració d'informes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 6 - Elaboració d'informes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/teoria/1-Introduccio%20als%20informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció als informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/teoria/2-Disseny%20d%27informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Disseny d'informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/teoria/3-Grafics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Elaboració de gràfics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/teoria/4-Aplicacions%20amb%20informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Desenvolupament d'aplicacions amb informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/tasques/practica1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/tasques/practica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../6-Informes/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 7 - Proves, distribució i documentació d'aplicacions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 7 - Proves, distribució i documentació d'aplicacions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/1-metodologies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Metodologies de desenvolupament de software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/2-tipus-proves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Tipus de proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/3-TDD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Desenvolupament basat en proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/4-cd-ci/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Integració i entrega/desplegament continu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/teoria/5-empaquetat-distribucio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Empaquetat i distribució d'aplicacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_1" id="__nav_8_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Activitats resoltes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Activitats resoltes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/1-pytest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 1 - Proves unitàries amb pytest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/2-tdd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 2 - Desenvolupament guiat per proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/3-ci/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 3 - Integració continua
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/4-executable-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 4 - Executable windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/activitats/5-instalador-linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 5 - Instal·lador linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_2" id="__nav_8_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pràctiques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pràctiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/1-pytest-cartera/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1 - Proves unitàries amb pytest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/2-pytest-qt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2 - pytest-qt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/3-tdd-fatorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3 - Desenvolupament guiat per proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/4-ci-factorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4 - Integració continua
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../9-Testing-distribucio/tasques/practiques/5-executable-instalador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5 - Instal·lador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Informació
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../info/guia_alumne_DI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de l'alumne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Criteris d'avaluació
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Criteris d'avaluació
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../info/qualificacio/rubrica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rúbriques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#jugadors" class="md-nav__link">
+    <span class="md-ellipsis">
+      Jugadors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrada-dusuari" class="md-nav__link">
+    <span class="md-ellipsis">
+      Entrada d’usuari
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enemics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enemics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="sprites">Sprites</h1>
+<p>Al disseny del joc, el jugador comença per l’esquerra i els obstacles entren per la dreta. Podeu representar tots els obstacles amb objectes de la superfície per fer tot el dibuix més fàcil, però com sabeu on dibuixar-los? Com se sap si un obstacle ha xocat amb el jugador? Què passa quan l'obstacle ix de la pantalla? Què passa si voleu dibuixar imatges de fons que també es moguin? Què passa si voleu que les vostres imatges siguen animades? Podeu gestionar totes aquestes situacions i molt més amb els <em>sprites</em>.</p>
+<p>En termes de programació, un sprite és una representació 2D d'alguna cosa a la pantalla. Essencialment, és una imatge. pygame proporciona una classe Sprite, que està dissenyada per contenir una o diverses representacions gràfiques de qualsevol objecte de joc que vulgueu mostrar a la pantalla. Per utilitzar-lo, creeu una nova classe que herede d'Sprite. Això us permet utilitzar els seus mètodes heredats.</p>
+<h2 id="jugadors">Jugadors</h2>
+<p>A continuació s’explica com s’utilitzen els objectes Sprite amb el joc actual per definir el jugador.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Define a Player object by extending pygame.sprite.Sprite</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1"># The surface drawn on the screen is now an attribute of 'player'</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Player</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">surf</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">((</span><span class="mi">75</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">surf</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">surf</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>Primer definiu Player ampliant pygame.sprite.Sprite. Després <em><code>.__ init __()</code></em> utilitza <em><code>.super()</code></em> per cridar al constructor de la classe pare.</p>
+<p>A continuació, definim i inicialitzem .surf per mantindre la imatge que voleu mostrar, que actualment és un quadre blanc. També definim i inicialitzem .rect, que s'utilitzarà més endavant. Per utilitzar aquesta nova classe, heu de crear un objecte nou i canviar també el codi de dibuix. Amplieu el bloc de codi següent per veure-ho tot junt:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span>
+<span class="normal"><a href="#__codelineno-1-40">40</a></span>
+<span class="normal"><a href="#__codelineno-1-41">41</a></span>
+<span class="normal"><a href="#__codelineno-1-42">42</a></span>
+<span class="normal"><a href="#__codelineno-1-43">43</a></span>
+<span class="normal"><a href="#__codelineno-1-44">44</a></span>
+<span class="normal"><a href="#__codelineno-1-45">45</a></span>
+<span class="normal"><a href="#__codelineno-1-46">46</a></span>
+<span class="normal"><a href="#__codelineno-1-47">47</a></span>
+<span class="normal"><a href="#__codelineno-1-48">48</a></span>
+<span class="normal"><a href="#__codelineno-1-49">49</a></span>
+<span class="normal"><a href="#__codelineno-1-50">50</a></span>
+<span class="normal"><a href="#__codelineno-1-51">51</a></span>
+<span class="normal"><a href="#__codelineno-1-52">52</a></span>
+<span class="normal"><a href="#__codelineno-1-53">53</a></span>
+<span class="normal"><a href="#__codelineno-1-54">54</a></span>
+<span class="normal"><a href="#__codelineno-1-55">55</a></span>
+<span class="normal"><a href="#__codelineno-1-56">56</a></span>
+<span class="normal"><a href="#__codelineno-1-57">57</a></span>
+<span class="normal"><a href="#__codelineno-1-58">58</a></span>
+<span class="normal"><a href="#__codelineno-1-59">59</a></span>
+<span class="normal"><a href="#__codelineno-1-60">60</a></span>
+<span class="normal"><a href="#__codelineno-1-61">61</a></span>
+<span class="normal"><a href="#__codelineno-1-62">62</a></span>
+<span class="normal"><a href="#__codelineno-1-63">63</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Import the pygame module</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">pygame</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Import pygame.locals for easier access to key coordinates</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1"># Updated to conform to flake8 and black standards</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kn">from</span> <span class="nn">pygame.locals</span> <span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>    <span class="n">K_UP</span><span class="p">,</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>    <span class="n">K_DOWN</span><span class="p">,</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>    <span class="n">K_LEFT</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>    <span class="n">K_RIGHT</span><span class="p">,</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>    <span class="n">K_ESCAPE</span><span class="p">,</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>    <span class="n">KEYDOWN</span><span class="p">,</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>    <span class="n">QUIT</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="c1"># Define constants for the screen width and height</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="n">SCREEN_WIDTH</span> <span class="o">=</span> <span class="mi">800</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="n">SCREEN_HEIGHT</span> <span class="o">=</span> <span class="mi">600</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="c1"># Define a player object by extending pygame.sprite.Sprite</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="c1"># The surface drawn on the screen is now an attribute of 'player'</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="k">class</span> <span class="nc">Player</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Player</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">surf</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">((</span><span class="mi">75</span><span class="p">,</span> <span class="mi">25</span><span class="p">))</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">surf</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">surf</span><span class="o">.</span><span class="n">get_rect</span><span class="p">()</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="c1"># Initialize pygame</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="n">pygame</span><span class="o">.</span><span class="n">init</span><span class="p">()</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="c1"># Create the screen object</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="c1"># The size is determined by the constant SCREEN_WIDTH and SCREEN_HEIGHT</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">SCREEN_WIDTH</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span><span class="p">))</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="c1"># Instantiate player. Right now, this is just a rectangle.</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="p">()</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="c1"># Variable to keep the main loop running</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="c1"># Main loop</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44"></a>    <span class="c1"># for loop through the event queue</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46"></a>        <span class="c1"># Check for KEYDOWN event</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">KEYDOWN</span><span class="p">:</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48"></a>            <span class="c1"># If the Esc key is pressed, then exit the main loop</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49"></a>            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">K_ESCAPE</span><span class="p">:</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50"></a>                <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51"></a>        <span class="c1"># Check for QUIT event. If QUIT, then set running to false.</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52"></a>        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53"></a>            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54"></a>
+<a id="__codelineno-1-55" name="__codelineno-1-55"></a>    <span class="c1"># Fill the screen with black</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56"></a>    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57"></a>
+<a id="__codelineno-1-58" name="__codelineno-1-58"></a>    <span class="c1"># Draw the player on the screen</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59"></a>    <span class="c1">#screen.blit(player.surf, (SCREEN_WIDTH/2, SCREEN_HEIGHT/2))</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60"></a>    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">player</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">player</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61"></a>
+<a id="__codelineno-1-62" name="__codelineno-1-62"></a>    <span class="c1"># Update the display</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="Player" src="../img/finestra_Player.png"></p>
+<h2 id="entrada-dusuari">Entrada d’usuari</h2>
+<p>Fins ara, hem après a configurar Pygame i dibuixar objectes a la pantalla. Ara comença la diversió. Fareu que el joc es puga controlar mitjançant el teclat.</p>
+<p>Abans, haviem vist que <em>pygame.event.get()</em> retorna la llista dels esdeveniments de la cua, que analitzem per trobar els seus tipus. Bé, aquesta no és l’única manera de llegir les tecles. <em>pygame</em> també proporciona <em>pygame.event.get_pressed()</em>, que retorna un diccionari que conté tots els esdeveniments KEYDOWN actuals a la cua.</p>
+<p>Posar-ho al bucle del joc després del bucle de gestió d'esdeveniments torna un diccionari que conté les tecles apretades al començament de cada fotograma.</p>
+<p>A continuació, escrivim un mètode a Player per analitzar aquest diccionari. Això definirà el comportament del sprite a partir de les tecles que es premen.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Get the set of keys pressed and check for user input</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">pressed_keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># Move the sprite based on user keypresses</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pressed_keys</span><span class="p">):</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="k">if</span> <span class="n">pressed_keys</span><span class="p">[</span><span class="n">K_UP</span><span class="p">]:</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>    <span class="k">if</span> <span class="n">pressed_keys</span><span class="p">[</span><span class="n">K_DOWN</span><span class="p">]:</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>    <span class="k">if</span> <span class="n">pressed_keys</span><span class="p">[</span><span class="n">K_LEFT</span><span class="p">]:</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    <span class="k">if</span> <span class="n">pressed_keys</span><span class="p">[</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>K_UP, K_DOWN, K_LEFT i K_RIGHT corresponen a les tecles de les fletxes del teclat. Utilitzarem <em>.move_ip()</em>, que significa moure des del punt actual, i reb per paràmetre el número de pixels a moure's en horitzontal i en vertical com si es tractara d'un eix de coordenades.</p>
+<p>A continuació, cridem a <em>.update()</em> cada fotograma per moure el sprite del jugador en resposta a les pulsacions de tecles.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1"># Main loop</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="c1"># for loop through the event queue</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>        <span class="c1"># Check for KEYDOWN event</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">KEYDOWN</span><span class="p">:</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>            <span class="c1"># If the Esc key is pressed, then exit the main loop</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">K_ESCAPE</span><span class="p">:</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>                <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>        <span class="c1"># Check for QUIT event. If QUIT, then set running to false.</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="c1"># Get all the keys currently pressed</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="n">pressed_keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="c1"># Update the player sprite based on user keypresses</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>    <span class="n">player</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pressed_keys</span><span class="p">)</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>    <span class="c1"># Fill the screen with black</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>    <span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>Amb això, ja veiem que el Player es mou tant en horitzontal com en vertical.</p>
+<p><img alt="Moviment del jugador en resposta a pulsació de tecles" src="../img/moviment_playerpng.png"></p>
+<p>És possible que noteu dos problemes:</p>
+<ol>
+<li>El rectangle del jugador es mou molt ràpid. Ho solucionarem més endavant.</li>
+<li>El rectangle del jugador pot ixir-se'n de la pantalla. Solucionem-ho ara.</li>
+</ol>
+<p>Per mantenir el jugador a la pantalla, cal afegir la lògica per detectar les colisions entre el jugador i els límits de la pantalla. Per fer-ho, comprovem si les coordenades del rectangle s’han desplaçat més enllà del límit de la pantalla. Si és així, indiquem al programa que el torne a la vora, quedant la funció update com a continuació s'indica:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Move the sprite based on user keypresses</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pressed_keys</span><span class="p">):</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="k">if</span> <span class="n">pressed_keys</span><span class="p">[</span><span class="n">K_UP</span><span class="p">]:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="k">if</span> <span class="n">pressed_keys</span><span class="p">[</span><span class="n">K_DOWN</span><span class="p">]:</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="k">if</span> <span class="n">pressed_keys</span><span class="p">[</span><span class="n">K_LEFT</span><span class="p">]:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="k">if</span> <span class="n">pressed_keys</span><span class="p">[</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>    <span class="c1"># Keep player on the screen</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">left</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">right</span> <span class="o">&gt;</span> <span class="n">SCREEN_WIDTH</span><span class="p">:</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">right</span> <span class="o">=</span> <span class="n">SCREEN_WIDTH</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">top</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">top</span> <span class="o">=</span> <span class="mi">0</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">bottom</span> <span class="o">&gt;=</span> <span class="n">SCREEN_HEIGHT</span><span class="p">:</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">bottom</span> <span class="o">=</span> <span class="n">SCREEN_HEIGHT</span>
+</code></pre></div></td></tr></table></div>
+<p>Ací, en lloc d’utilitzar <em>.move()</em>, només heu de canviar les coordenades corresponents de .top, .bottom, .left o .right directament. Proveu-ho i veureu que el rectangle del reproductor ja no pot ixir-se'n de la pantalla.</p>
+<h2 id="enemics">Enemics</h2>
+<p>Què és un joc sense enemics? Utilitzarem les mateixes tècniques que ja hem après per crear una classe enemiga bàsica i, a continuació, crearem moltes instàncies d'aquesta per a que el jugador intente evitar-les. Primer, importeu la llibreria <em>random</em>. 
+A continuació, creeu una nova classe de <em>sprite</em> anomenada <em>Enemy</em>, seguint el mateix patró que utilitzarem per a <em>Player</em>:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c1"># Import random for random numbers</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">import</span> <span class="nn">random</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># Define the enemy object by extending pygame.sprite.Sprite</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="c1"># The surface you draw on the screen is now an attribute of 'enemy'</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="k">class</span> <span class="nc">Enemy</span><span class="p">(</span><span class="n">pygame</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Sprite</span><span class="p">):</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Enemy</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">surf</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">Surface</span><span class="p">((</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">surf</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">))</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">surf</span><span class="o">.</span><span class="n">get_rect</span><span class="p">(</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>            <span class="n">center</span><span class="o">=</span><span class="p">(</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>                <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="n">SCREEN_WIDTH</span> <span class="o">+</span> <span class="mi">20</span><span class="p">,</span> <span class="n">SCREEN_WIDTH</span> <span class="o">+</span> <span class="mi">100</span><span class="p">),</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>                <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span><span class="p">),</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a>            <span class="p">)</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>        <span class="p">)</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">speed</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>    <span class="c1"># Move the sprite based on speed</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>    <span class="c1"># Remove the sprite when it passes the left edge of the screen</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a>    <span class="k">def</span> <span class="nf">update</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">move_ip</span><span class="p">(</span><span class="o">-</span><span class="bp">self</span><span class="o">.</span><span class="n">speed</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">right</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>Hi ha quatre diferències notables entre Enemic i Jugador:</p>
+<ol>
+<li>Quan creem un enemic ho fem a una ubicació aleatòria al llarg de la vora dreta de la pantalla. Es troba en una posició entre 20 i 100 píxels de distància de la vora dreta i en algun lloc entre la vora superior i la inferior. De forma que al principi no serà visible i anirà apareixent per la vora dreta de la pantalla.</li>
+<li>Definim una velocitat <em>speed</em> com un número aleatori entre 5 i 20. Això especifica la velocitat amb què aquest enemic es mou cap al jugador.</li>
+<li><em>.update()</em> no necessita arguments, ja que els enemics es mouen automàticament cap a l'esquerra a la velocitat aleatòria definida quan es va crear i que ja no canvia.</li>
+<li>Comprovem si l'enemic s'ha mogut fora de la pantalla al sobrepassar la vora esquerra. Per assegurar-nos que l’enemic estiga completament fora de la pantalla i que no desaparega mentre encara siga visible, comprovem que el costat dret de .<em>rect</em> haja sobrepassat el costat esquerre de la pantalla. Una vegada que l'enemic es troba fora de pantalla, cridem a <em>.kill()</em> per evitar anar consumint més recursos cada vegada.</li>
+</ol>
+<p>Què fa <em>.kill()</em>? Per saber-ho, estudiem els <em>Sprite Groups</em>.</p>
+<h1 id="sprite-groups">Sprite Groups</h1>
+<p>Una altra classe súper útil que proporciona Pygame són els <em>Sprite Groups</em>. Es tracta d'un objecte que conté un grup d'objectes Sprite. Aleshores, per què utilitzar-lo? No podem fer el seguiment dels nostres objectes Sprite en una llista? Bé, podem, però l’avantatge d’utilitzar un grup radica en els mètodes que exposa. Aquests mètodes ajuden a detectar si algun enemic ha xocat amb el jugador, cosa que facilita les actualitzacions.</p>
+<p>Vegem com crear <em>Sprite Group</em>. Creem dos objectes de grup diferents:</p>
+<ol>
+<li>El primer grup tindrà tots els Sprite del joc.</li>
+<li>El segon grup tindrà només els objectes enemics.</li>
+</ol>
+<p>A continuació, es mostra el codi:
+</p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># Create the 'player'</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="p">()</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1"># Create groups to hold enemy sprites and all sprites</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1"># - enemies is used for collision detection and position updates</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1"># - all_sprites is used for rendering</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">enemies</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="n">all_sprites</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">Group</span><span class="p">()</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="n">all_sprites</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">player</span><span class="p">)</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="c1"># Variable to keep the main loop running</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="n">running</span> <span class="o">=</span> <span class="kc">True</span>
+</code></pre></div></td></tr></table></div>
+<p>Quan cridem el mètode <em>.kill()</em>, el Sprite s’elimina de tots els grups als quals pertany. Això també elimina les referències al Sprite, cosa que permet al <em>garbage collector</em> de Python recuperar la memòria quan siga necessari.</p>
+<p>Ara que teniu un grup all_sprites, podeu canviar la manera com es dibuixen els objectes. En lloc de cridar a <em>.blit()</em> només amb Player, podem repintar tot sobre all_sprites:</p>
+<p></p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span>
+<span class="normal"><a href="#__codelineno-7-8">8</a></span>
+<span class="normal"><a href="#__codelineno-7-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Fill the screen with black</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">screen</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1"># Draw all sprites</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">all_sprites</span><span class="p">:</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">entity</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="c1"># Flip everything to the display</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+Ara, qualsevol objecte d'<em>all_sprites</em> es redibuixarà a tots els fotogrames, ja sigui un enemic o un jugador.
+<p>Només hi ha un problema ... No tenim cap enemic. Podriem crear un munt d’enemics al principi del joc, però el joc es tornaria complicadíssim a l'apareixer tots junts. En el seu lloc, explorem com mantenir un subministrament constant d’enemics que arriben a mesura que avance el joc.</p>
+<h1 id="esdeveniments-personalitzats">Esdeveniments personalitzats</h1>
+<p>El disseny demana que apareguen enemics a intervals regulars. Això significa que, a intervals establerts, hem de fer dues coses:</p>
+<ol>
+<li>Crea un enemic nou.</li>
+<li>Afegiu-lo a all_sprites i a enemics. (Sprite Groups)</li>
+</ol>
+<p>Ja teniu codi que gestiona esdeveniments aleatoris. El bucle d'esdeveniments està dissenyat per buscar esdeveniments aleatoris que es produeixen a cada fotograma i tractar-los adequadament. Per sort, pygame no us limita a utilitzar només els tipus d’esdeveniments que té predefinits. Podeu definir els vostres propis esdeveniments per gestionar-los segons convinga.</p>
+<p>Vegem com es crea un esdeveniment personalitzat que es genera cada pocs segons. Podeu crear un esdeveniment personalitzat com es mostra a continuació:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># Create the screen object</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="c1"># The size is determined by the constant SCREEN_WIDTH and SCREEN_HEIGHT</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">screen</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">SCREEN_WIDTH</span><span class="p">,</span> <span class="n">SCREEN_HEIGHT</span><span class="p">))</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="c1"># Create a custom event for adding a new enemy</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="n">ADDENEMY</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">USEREVENT</span> <span class="o">+</span> <span class="mi">1</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">set_timer</span><span class="p">(</span><span class="n">ADDENEMY</span><span class="p">,</span> <span class="mi">250</span><span class="p">)</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="c1"># Instantiate player. Right now, this is just a rectangle.</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="n">player</span> <span class="o">=</span> <span class="n">Player</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>pygame defineix els esdeveniments internament com a enters, de manera que cal definir un nou esdeveniment amb un enter únic. L'últim esdeveniment reservat a Pygame es diu <em>USEREVENT</em>, de manera que definir <em>ADDENEMY = pygame.USEREVENT + 1</em> garanteix que siga únic.</p>
+<p>A continuació, heu d'insertar aquest nou esdeveniment a la cua d'esdeveniments a intervals regulars durant tot el joc. Necessitem d'alguna forma gestionar el temps, per això utilitzarem el mòdul de temps. </p>
+<p>Disparem el nou esdeveniment ADDENEMY cada 250 mil·lisegons, o quatre vegades per segon. Per això farem una crida a <a href="https://www.kite.com/python/docs/pygame.time.set_timer"><em>.set_timer()</em></a> fora del bucle del joc, ja que només necessitem un temporitzador, però es dispararà durant tot el joc cada 250 milisegons.</p>
+<p>Afegim el codi per gestionar el nostre nou esdeveniment.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span>
+<span class="normal"><a href="#__codelineno-9-17">17</a></span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span>
+<span class="normal"><a href="#__codelineno-9-19">19</a></span>
+<span class="normal"><a href="#__codelineno-9-20">20</a></span>
+<span class="normal"><a href="#__codelineno-9-21">21</a></span>
+<span class="normal"><a href="#__codelineno-9-22">22</a></span>
+<span class="normal"><a href="#__codelineno-9-23">23</a></span>
+<span class="normal"><a href="#__codelineno-9-24">24</a></span>
+<span class="normal"><a href="#__codelineno-9-25">25</a></span>
+<span class="normal"><a href="#__codelineno-9-26">26</a></span>
+<span class="normal"><a href="#__codelineno-9-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Main loop</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>    <span class="c1"># Look at every event in the queue</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>        <span class="c1"># Did the user hit a key?</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>        <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">KEYDOWN</span><span class="p">:</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>            <span class="c1"># Was it the Escape key? If so, stop the loop.</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="n">K_ESCAPE</span><span class="p">:</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>                <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>        <span class="c1"># Did the user click the window close button? If so, stop the loop.</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a>        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">QUIT</span><span class="p">:</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>            <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a>        <span class="c1"># Add a new enemy?</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a>        <span class="k">elif</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">ADDENEMY</span><span class="p">:</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a>            <span class="c1"># Create the new enemy and add it to sprite groups</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a>            <span class="n">new_enemy</span> <span class="o">=</span> <span class="n">Enemy</span><span class="p">()</span>
+<a id="__codelineno-9-19" name="__codelineno-9-19"></a>            <span class="n">enemies</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_enemy</span><span class="p">)</span>
+<a id="__codelineno-9-20" name="__codelineno-9-20"></a>            <span class="n">all_sprites</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">new_enemy</span><span class="p">)</span>
+<a id="__codelineno-9-21" name="__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22"></a>    <span class="c1"># Get the set of keys pressed and check for user input</span>
+<a id="__codelineno-9-23" name="__codelineno-9-23"></a>    <span class="n">pressed_keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+<a id="__codelineno-9-24" name="__codelineno-9-24"></a>    <span class="n">player</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">pressed_keys</span><span class="p">)</span>
+<a id="__codelineno-9-25" name="__codelineno-9-25"></a>
+<a id="__codelineno-9-26" name="__codelineno-9-26"></a>    <span class="c1"># Update enemy position</span>
+<a id="__codelineno-9-27" name="__codelineno-9-27"></a>    <span class="n">enemies</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+<p>Sempre que el gestor d'esdeveniments veu el nou esdeveniment ADDENEMY, crea un enemic i l'afegeix a <em>enemies</em> i a <em>all_sprites</em>. Com que <em>Enemy</em> està en <em>all_sprites</em>, es dibuixarà a cada fotograma. També heu de cridar a <em>enemies.update()</em>, que actualitza totes les posicions dels enemics.</p>
+<p><img alt="Moviment dels enemics" src="../img/moviment_enemics.png"></p>
+<h1 id="deteccio-de-collisions">Detecció de col·lisions</h1>
+<p>El disseny del joc demana que finalitze el joc sempre que un enemic xoque amb el jugador. La comprovació de col·lisions és una tècnica bàsica de programació de jocs i, en general, requereix alguns càlculs matemàtics per determinar si dos sprites se superposaran.</p>
+<p>Aquí és on resulta útil un <em>framework</em> com Pygame. Escriure un codi de detecció de col·lisions és tediós, però Pygame té MOLTS mètodes de detecció de col·lisions disponibles per utilitzar-los.</p>
+<p>Per a aquest tutorial, utilitzeu un mètode anomenat <em>.spritecollideany()</em>, que detecta qualsevol col·lisió entre un <em>sprite</em> i els <em>sprites</em> d'un grup. Accepta un Sprite i un Grup com a paràmetres. Comprova les superposicions entre tots els <em>.rect</em> del grup i el <em>.rect</em> de l'sprite. Si és així, torna True, és a dir si detecta col·lisió. En cas contrari, torna False. Això s'ajusta perfectament a aquest joc, ja que hem de comprovar si un sol jugador xoca amb un grup d'enemics.</p>
+<p>Vegem el codi:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span>
+<span class="normal"><a href="#__codelineno-10-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c1"># Draw all sprites</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="k">for</span> <span class="n">entity</span> <span class="ow">in</span> <span class="n">all_sprites</span><span class="p">:</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="n">screen</span><span class="o">.</span><span class="n">blit</span><span class="p">(</span><span class="n">entity</span><span class="o">.</span><span class="n">surf</span><span class="p">,</span> <span class="n">entity</span><span class="o">.</span><span class="n">rect</span><span class="p">)</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="c1"># Check if any enemies have collided with the player</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="k">if</span> <span class="n">pygame</span><span class="o">.</span><span class="n">sprite</span><span class="o">.</span><span class="n">spritecollideany</span><span class="p">(</span><span class="n">player</span><span class="p">,</span> <span class="n">enemies</span><span class="p">):</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>    <span class="c1"># If so, then remove the player and stop the loop</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>    <span class="n">player</span><span class="o">.</span><span class="n">kill</span><span class="p">()</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>    <span class="n">running</span> <span class="o">=</span> <span class="kc">False</span>
+</code></pre></div></td></tr></table></div>
+<p>Es comprova si el jugador ha xocat amb algun enemic. Si és així, es crida a <em>player.kill()</em> per eliminar-lo de tots els grups als quals pertany. Com que els únics objectes que es representen es troben en <em>all_sprites</em>, el jugador ja no es renderitzarà. Una vegada que el jugador haja perdur, també haurem d'eixir del joc, de manera que configureu <em>running = False</em> per ixir del bucle del joc.</p>
+<h1 id="velocitat-del-joc">Velocitat del joc</h1>
+<p>En provar el joc, potser vos haureu adonat que els enemics es mouen massa ràpid. Si no, tranquils, ja que el joc s'executarà a diferents velocitats segons el hardware subjacent, el sistema operatiu, etc.</p>
+<p>La raó d'això és que el bucle del joc processa els fotogrames tan ràpidament com el processador i l'entorn ho permeten. Com que tots els sprites es mouen una vegada per fotograma, es poden moure centenars de vegades cada segon. El nombre de fotogrames que es manegen cada segon s’anomena velocitat de fotogrames (<em>frame rate</em>), un terme molt utilitzat pels gamers. Aconseguir-ne un adequat és la diferència entre un joc jugable i un altre que no ho és.</p>
+<p>Normalment, volem una freqüència de fotogrames el més alta possible, per poder apreciar el major nombre de detalls, però, per a aquest joc, cal reduir-lo un poc perquè el joc es puga jugar. Afortunadament, el mòdul de temps de Python conté un rellotge dissenyat exactament per a aquest propòsit.</p>
+<p>L’ús del rellotge per establir una velocitat de fotogrames reproduïble requereix només dues línies de codi. El primer crea un rellotge nou abans que comence el bucle del joc. Després utilitzem la funció <em>.tick()</em> per informar a pygame que el programa ha arribat al final del fotograma.</p>
+<p></p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># Setup the clock for a decent framerate</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span> 
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="o">...</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="c1"># Our main loop</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>    <span class="o">...</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a>    <span class="c1"># Flip everything to the display</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">flip</span><span class="p">()</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a>    <span class="c1"># Ensure program maintains a rate of 30 frames per second</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a>    <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+L'argument passat a <em>.tick()</em> estableix la velocitat de fotogrames desitjada. Per fer-ho, es calcula el nombre de mil·lisegons que ha de tardar cada fotograma, en funció de la velocitat de fotogrames desitjada. A continuació, compara aquest nombre amb el nombre de mil·lisegons que han passat des de la darrera vegada que es va cridar <em>.tick()</em>. Si no ha passat prou temps, retarda el processament per assegurar-se que mai no supera la velocitat de fotogrames especificada.
+<p>Si es passa una freqüència de fotogrames més xicoteta, transcorrerà més temps entre fotogrames, mentre que una freqüència de fotogrames més gran proporcionarà un joc més suau (i més ràpid).</p>
+<p>En aquest moment, tenim un joc totalment funcional i jugable.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["content.code.annotate", "content.code.copy", "search.suggest"], "search": "../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

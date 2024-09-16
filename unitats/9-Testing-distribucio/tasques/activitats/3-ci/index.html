@@ -1,0 +1,3424 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://fpieseljust.github.io/desenvolupament-interficies/unitats/9-Testing-distribucio/tasques/activitats/3-ci/">
+      
+      
+        <link rel="prev" href="../2-tdd/">
+      
+      
+        <link rel="next" href="../4-executable-windows/">
+      
+      
+      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Activitat resolta 3 - Integració continua - Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35f28582.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#integracio-continua-amb-github-pages" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-header__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Activitat resolta 3 - Integració continua
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9zM20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12zm-9.15 3.96h2.3L12 9z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-nav__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 1 - Programació amb Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 1 - Programació amb Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/teoria/2%20-%20Control%20de%20fluxe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Control de fluxe
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/teoria/3%20-%20Funcions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Funcions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/teoria/4%20-%20Fitxers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tractament de fitxers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/teoria/5%20-%20Excepcions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Errors i excepcions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/teoria/6%20-%20POO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programació oorientada a objectes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pràctica 1 - PyGame
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pràctica 1 - PyGame
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/1%20-%20PyGame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/2%20-%20Disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Disseny del joc
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/3%20-%20Sprites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sprites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/4%20-%20Imatges/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Imatges
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/5%20-%20So/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/6%20-%20Conclusi%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Conclusió
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_7" id="__nav_2_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/tasques/1%20-%20Obligatori/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part I - Base (30%)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/tasques/2%20-%20Projecte/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Part II - ampliació/projecte (70%)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../1-python/pr%C3%A0ctiques/tasques/3%20-%20Qualificaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Qualificació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 2 - Introducció a les interfícies d'usuari
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 2 - Introducció a les interfícies d'usuari
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-intro-interficies/teoria/1%20-%20Introduccio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció a les interfícies d'usuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-intro-interficies/teoria/2%20-%20Usabilitat/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Usabilitat
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-intro-interficies/teoria/3%20-%20Pautes%20de%20Disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Pautes de disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-intro-interficies/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-intro-interficies/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../2-intro-interficies/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 3 - Introducció a les interfícies d'usuari amb Flet
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 3 - Introducció a les interfícies d'usuari amb Flet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/teoria/2%20-%20Flet-app/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Comencem amb Flet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/teoria/3%20-%20Layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Contenidors de components. Layouts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/teoria/4%20-%20Navegacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Navegació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/teoria/5%20-%20Dialegs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Diàlegs, alertes i panells
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/teoria/6%20-%20Emmagatzematge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6 - Emmagatzematge d'informació a través de l'API de Flet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/teoria/7%20-%20Aplicacions%20multiusuari/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7 - Aplicacions multiusuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/teoria/8%20-%20Controls%20definits%20per%20l%27usuari/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8 - Controls definits per l'usuari
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../3-GUI-Flet/tasques/2%20-%20Practiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 4 - Introducció a les interfícies d'usuari amb PySide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 4 - Introducció a les interfícies d'usuari amb PySide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-GUI-PySide6/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Tecnologies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-GUI-PySide6/teoria/2%20-%20Controls%20%C3%BAs%20com%C3%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Controls d'ús comú
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-GUI-PySide6/teoria/3%20-%20Layouts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Contenidors de components. Disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-GUI-PySide6/teoria/4%20-%20Menus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Menús, barres de ferramentes i estat, i components flotants
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-GUI-PySide6/teoria/5%20-%20Dialegs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Diàlegs i altres finestres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-GUI-PySide6/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../4-GUI-PySide6/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 5 - Generació d'interfícies a partir de llenguatges de marques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 5 - Generació d'interfícies a partir de llenguatges de marques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-Interficies-LM/teoria/1-Llenguatges%20de%20marques%20per%20a%20la%20generaci%C3%B3%20d%27interf%C3%ADcies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Llenguatges de marques per a la generació d'interfícies.md
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-Interficies-LM/teoria/2-Ferramentes%20de%20disseny%20basades%20en%20llenguatges%20de%20marques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Ferramentes de disseny basades en llenguatges de marques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-Interficies-LM/teoria/3-%C3%9As%20de%20la%20interf%C3%ADcie%20en%20una%20aplicaci%C3%B3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Ús de la interfície en una aplicació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-Interficies-LM/teoria/4-Funcions%20avan%C3%A7ades%20de%20la%20ferramenta%20de%20disseny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Funcions avançades de la ferramenta de disseny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-Interficies-LM/tasques/1%20-%20Activitats/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Activitats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-Interficies-LM/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Pràctiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../5-Interficies-LM/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 6 - Elaboració d'informes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 6 - Elaboració d'informes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-Informes/teoria/1-Introduccio%20als%20informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Introducció als informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-Informes/teoria/2-Disseny%20d%27informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Disseny d'informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-Informes/teoria/3-Grafics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Elaboració de gràfics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-Informes/teoria/4-Aplicacions%20amb%20informes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Desenvolupament d'aplicacions amb informes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-Informes/tasques/practica1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-Informes/tasques/practica2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../6-Informes/enlla%C3%A7os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Enllaços
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Unitat 7 - Proves, distribució i documentació d'aplicacions
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Unitat 7 - Proves, distribució i documentació d'aplicacions
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teoria
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Teoria
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teoria/1-metodologies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - Metodologies de desenvolupament de software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teoria/2-tipus-proves/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Tipus de proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teoria/3-TDD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Desenvolupament basat en proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teoria/4-cd-ci/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Integració i entrega/desplegament continu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teoria/5-empaquetat-distribucio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - Empaquetat i distribució d'aplicacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tasques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tasques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_1" id="__nav_8_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Activitats resoltes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Activitats resoltes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../1-pytest/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 1 - Proves unitàries amb pytest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../2-tdd/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 2 - Desenvolupament guiat per proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Activitat resolta 3 - Integració continua
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 3 - Integració continua
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectiu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectiu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objectiu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primer-pas-creacio-del-repositori" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primer pas - creació del repositori
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segon-pas-afegim-un-linter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segon pas - afegim un linter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tercer-pas-afegim-una-accio-de-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tercer pas - afegim una acció de github
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quart-pas-modifiquem-el-codi-per-corregir-els-erros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quart pas - modifiquem el codi per corregir els erros
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4-executable-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 4 - Executable windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../5-instalador-linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activitat resolta 5 - Instal·lador linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2_2" id="__nav_8_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pràctiques
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_8_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Pràctiques
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practiques/1-pytest-cartera/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 1 - Proves unitàries amb pytest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practiques/2-pytest-qt/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 2 - pytest-qt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practiques/3-tdd-fatorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 3 - Desenvolupament guiat per proves
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practiques/4-ci-factorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 4 - Integració continua
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practiques/5-executable-instalador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pràctica 5 - Instal·lador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Informació
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Informació
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../info/guia_alumne_DI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de l'alumne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Criteris d'avaluació
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Criteris d'avaluació
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../info/qualificacio/rubrica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rúbriques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../about/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectiu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectiu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Objectiu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primer-pas-creacio-del-repositori" class="md-nav__link">
+    <span class="md-ellipsis">
+      Primer pas - creació del repositori
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#segon-pas-afegim-un-linter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Segon pas - afegim un linter
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tercer-pas-afegim-una-accio-de-github" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tercer pas - afegim una acció de github
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quart-pas-modifiquem-el-codi-per-corregir-els-erros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quart pas - modifiquem el codi per corregir els erros
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<div><h1 id="integracio-continua-amb-github-pages">Integració continua amb Github Pages</h1>
+<p>Hem après en apartats anteriors que les noves metodologies s'orienten a obtenir un producte amb més qualitat amb un temps de lliurament el menor possible. Per aconseguir aquest objectiu, les empreses han implantat la cultura DevOps (development + operations). Entre les seves operacions hi ha la integració i el lliurament/desplegament continus, que són dues de les peces clau que els permetran aconseguir l'objectiu presentat anteriorment.</p>
+<h2 id="objectiu">Objectiu</h2>
+<p>En aquesta pràctica muntarem un sistema d'integració contínua amb Github Actions. En concret pujarem el nostre codi desenvolupat en l'activitat anterior, el que consistia a desenvolupar la funció <code>es_primo</code>, per poder fer integració contínua sobre el codi.</p>
+<h3 id="primer-pas-creacio-del-repositori">Primer pas - creació del repositori</h3>
+<p>El primer pas serà crear un repositori a github amb el nom, per exemple, ci_es_primo. Afegirem un README, un .gitignore del llenguatge de programació python i el publicarem sota llicència GNU/GPL 3.0.</p>
+<figure>
+<p><img alt="Alt text" src="../img/repo.png">
+  </p>
+<figcaption>Creació del repositori</figcaption>
+</figure>
+<p>Una vegada creat el clonem al nostre ordinador i afegim el codi (carpeta <code>src</code>) i les proves (carpeta <code>tests</code>) del nostre projecte.</p>
+<figure>
+<p><img alt="Alt text" src="../img/codi.png" width="500">
+  </p>
+<figcaption>Estructura del repositori</figcaption>
+</figure>
+<div class="admonition warning">
+<p class="admonition-title">pytest!</p>
+<p>Comproveu que en executar els tests amb vscode tot funciona correctament.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Compte!</p>
+<p>Afegiu .vscode/ a .gitignore per a no incorporar la configuració local al repositori remot.</p>
+</div>
+<h3 id="segon-pas-afegim-un-linter">Segon pas - afegim un linter</h3>
+<p>Ara anem a afegir un linter, que és una ferramenta que analitza el codi i busca errors, tant de sintaxi com d'estil. Podem utilitzar l'extensió vscode <code>pylint</code> de Microsoft o intal·lar i comprovar que la llibreria s'ha instal·lat al nostre entorn amb:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">pylint</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">pylint</span> <span class="o">--</span><span class="n">version</span>
+</code></pre></div></td></tr></table></div>
+<p>Si instal·lem pylint a vscode ens apareixeran els problemes detectats a la pestanya problems. </p>
+<figure>
+<p><img alt="Alt text" src="../img/pylint.png" width="600">
+  </p>
+<figcaption>Pylint a vscode</figcaption>
+</figure>
+<p>Si hem instal·lat la ferramenta, podem executar la següent ordre (des de l'arrel del repositori) per comprovar els problemes:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>$<span class="w"> </span>pylint<span class="w"> </span>src
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>*************<span class="w"> </span>Module<span class="w"> </span>src.funcions
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>src/funcions.py:15:0:<span class="w"> </span>C0304:<span class="w"> </span>Final<span class="w"> </span>newline<span class="w"> </span>missing<span class="w"> </span><span class="o">(</span>missing-final-newline<span class="o">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>src/funcions.py:1:0:<span class="w"> </span>C0114:<span class="w"> </span>Missing<span class="w"> </span>module<span class="w"> </span>docstring<span class="w"> </span><span class="o">(</span>missing-module-docstring<span class="o">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>src/funcions.py:4:0:<span class="w"> </span>C0116:<span class="w"> </span>Missing<span class="w"> </span><span class="k">function</span><span class="w"> </span>or<span class="w"> </span>method<span class="w"> </span>docstring<span class="w"> </span><span class="o">(</span>missing-function-docstring<span class="o">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>src/funcions.py:5:4:<span class="w"> </span>R1705:<span class="w"> </span>Unnecessary<span class="w"> </span><span class="s2">"else"</span><span class="w"> </span>after<span class="w"> </span><span class="s2">"return"</span>,<span class="w"> </span>remove<span class="w"> </span>the<span class="w"> </span><span class="s2">"else"</span><span class="w"> </span>and<span class="w"> </span>de-indent<span class="w"> </span>the<span class="w"> </span>code<span class="w"> </span>inside<span class="w"> </span>it<span class="w"> </span><span class="o">(</span>no-else-return<span class="o">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>-------------------------------------------------------------------
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>Your<span class="w"> </span>code<span class="w"> </span>has<span class="w"> </span>been<span class="w"> </span>rated<span class="w"> </span>at<span class="w"> </span><span class="m">6</span>.36/10<span class="w"> </span><span class="o">(</span>previous<span class="w"> </span>run:<span class="w"> </span><span class="m">6</span>.36/10,<span class="w"> </span>+0.00<span class="o">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title">Pylint CLI front a extensió pylint de MS</p>
+<p>Com vegeu els resultats no són exactament els mateixos degut a les diferents versions de pylint utilitzades.</p>
+</div>
+<h3 id="tercer-pas-afegim-una-accio-de-github">Tercer pas - afegim una acció de github</h3>
+<p>Les accions de Github ens permeten realitzar una sèrie d'accions cada vegada que es produeix un esdeveniment de Github. L'esdeveniment més utilitzat és PUSH, és a dir, afegir canvis al nostre repositori. Els fitxers actualitzats normalment seran mòduls de codi font que es van descarregar prèviament de Github, sobre els quals ha treballat i ha fet canvis un programador. Usant una eina de control de versions com Git, prepararem els canvis per integrar-los al repositori original. Com hem vist a la teoria, abans d'integrar el codi font modificat a la còpia mestra, ens hem d'assegurar que està lliure d'errors, passant les proves que havíem definit. Aquesta és la part CI d'un flux CI/CD.</p>
+<p>Per afegir una acció anem a Accions al nostre repositori. Ens suggeriran una sèrie de configuracions segons el contingut del repositori. En aquest cas, github detecta que és un repositori amb codi python, així que ens suggereix alguns fluxos de treball. Seleccionarem de <em><code>Python application</code></em> donant-li a <em><code>Configure</code></em>. En cas de no aparéixer, el podem buscar a la plataforma.</p>
+<figure>
+<p><img alt="Alt text" src="../img/python-app.png" width="300">
+  </p>
+<figcaption>Python application action</figcaption>
+</figure>
+<p>En prémer se'ns presentarà en edició un fitxer de configuració yaml <code>python-app.yml</code>.</p>
+<p>Simplement observant el fitxer de configuració es pot intuir com funciona:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span>
+<span class="normal"><a href="#__codelineno-2-31">31</a></span>
+<span class="normal"><a href="#__codelineno-2-32">32</a></span>
+<span class="normal"><a href="#__codelineno-2-33">33</a></span>
+<span class="normal"><a href="#__codelineno-2-34">34</a></span>
+<span class="normal"><a href="#__codelineno-2-35">35</a></span>
+<span class="normal"><a href="#__codelineno-2-36">36</a></span>
+<span class="normal"><a href="#__codelineno-2-37">37</a></span>
+<span class="normal"><a href="#__codelineno-2-38">38</a></span>
+<span class="normal"><a href="#__codelineno-2-39">39</a></span>
+<span class="normal"><a href="#__codelineno-2-40">40</a></span>
+<span class="normal"><a href="#__codelineno-2-41">41</a></span>
+<span class="normal"><a href="#__codelineno-2-42">42</a></span>
+<span class="normal"><a href="#__codelineno-2-43">43</a></span>
+<span class="normal"><a href="#__codelineno-2-44">44</a></span>
+<span class="normal"><a href="#__codelineno-2-45">45</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a># This workflow will install Python dependencies, run tests and lint with a single version of Python
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a># For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>name: Python application
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>on:
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>  push:
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>    branches: [ main ]
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>  pull_request:
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>    branches: [ main ]
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>permissions:
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>  contents: read
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>jobs:
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>  build:
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>    steps:
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>    - uses: actions/checkout@v3
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>    - name: Set up Python 3.10
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>      uses: actions/setup-python@v3
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>      with:
+<a id="__codelineno-2-31" name="__codelineno-2-31"></a>        python-version: "3.10"
+<a id="__codelineno-2-32" name="__codelineno-2-32"></a>    - name: Install dependencies
+<a id="__codelineno-2-33" name="__codelineno-2-33"></a>      run: |
+<a id="__codelineno-2-34" name="__codelineno-2-34"></a>        python -m pip install --upgrade pip
+<a id="__codelineno-2-35" name="__codelineno-2-35"></a>        pip install flake8 pytest
+<a id="__codelineno-2-36" name="__codelineno-2-36"></a>        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+<a id="__codelineno-2-37" name="__codelineno-2-37"></a>    - name: Lint with flake8
+<a id="__codelineno-2-38" name="__codelineno-2-38"></a>      run: |
+<a id="__codelineno-2-39" name="__codelineno-2-39"></a>        # stop the build if there are Python syntax errors or undefined names
+<a id="__codelineno-2-40" name="__codelineno-2-40"></a>        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+<a id="__codelineno-2-41" name="__codelineno-2-41"></a>        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+<a id="__codelineno-2-42" name="__codelineno-2-42"></a>        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+<a id="__codelineno-2-43" name="__codelineno-2-43"></a>    - name: Test with pytest
+<a id="__codelineno-2-44" name="__codelineno-2-44"></a>      run: |
+<a id="__codelineno-2-45" name="__codelineno-2-45"></a>        pytest
+</code></pre></div></td></tr></table></div>
+<p>Bàsicament estem configurant que quan es produesca un <code>push</code> o un <code>pull_request</code> sobre la rama principal <code>main</code> es llance l'acció. Quan es llance es posarà en marxa el <code>build</code> que serà executat amb un sol <code>job</code> o treball (podríem configurar-ne diversos). El <code>job</code> es porta a terme (<code>run</code>) sobre un contenidor docker que executa la última imatge d'ubuntu (<code>ubuntu-latest</code>) i realitza una sèrie de passos (<code>steps</code>). Els passos són:</p>
+<ul>
+<li>portar el codi (checkout)</li>
+<li>configurar python3 sobre el contenidor</li>
+<li>instal·lar les dependències. Aquest pas s'executa sobre la terminal bash del contenidor, igual que ho faríem al nostre ordinador.</li>
+<li>executar el linter, també sobre la terminal.</li>
+<li>executar les proves, novament utilitzant la terminal del contenidor.</li>
+</ul>
+<p>Si tots els passos anteriors es completen correctament, la integració haurà estat satisfactòria. En cas contrari, la construcció fallarà i ens enviarà un correu electrònic a l'adreça amb què ens registrem a github indicant que el flux de treball ha fallat.</p>
+<p>Canviarem algunes configuracions:</p>
+<ul>
+<li>Anem a modificar el nom del fitxer a ci.yml</li>
+<li>Canviarem tots els <code>name</code> per a que ens ajude a veure en quin pas ha fallat</li>
+<li>Utilitzarem el linter pylint en comptes de flake8</li>
+<li>La línia d'instal·lar les dependències definides al fitxer de requisits no cal, però la deixarem per si en un futur inserim dependències a una de les factoritzacions.</li>
+<li>El linter el canviarem perquè la puntuació a aconseguir siga de 10 (això és la màxima puntuació, estem exigint que siguen molt escrupolosos amb la producció de codi).</li>
+<li>Finalment, executarem les proves amb pytest.</li>
+</ul>
+<p>El fitxer quedaria com segueix:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a># This workflow will install Python dependencies, run tests and lint with a single version of Python
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a># For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>name: Integració contínua sobre el projecte funcions
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>on:
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>  push:
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    branches: [ "main" ]
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>  pull_request:
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>    branches: [ "main" ]
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>permissions:
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>  contents: read
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>jobs:
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>  build:
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>    runs-on: ubuntu-latest
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>    steps:
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>    - uses: actions/checkout@v3
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>    - name: Configurar Python 3.10
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a>      uses: actions/setup-python@v3
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>      with:
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a>        python-version: "3.10"
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a>    - name: Instal·lar dependències
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>      run: |
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a>        python -m pip install --upgrade pip
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a>        pip install pylint pytest
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a>        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a>    - name: Lint amb pylint
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>      run: |
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a>        # stop the build if there are Python syntax errors or undefined names
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a>        pylint --fail-under=10 src      
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a>    - name: Proves amb pytest
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>      run: |
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>        pytest
+</code></pre></div></td></tr></table></div>
+<p>En donar-li a <code>satart commit</code>, es realitzarà un <code>push</code> sobre el repositori, per la qual cosa l'acció s'executarà. Si vas al menú <code>Actions</code> observaràs que la integració no ha sigut satisfactòria. Això és degut al fet que no havíem corregit els problemes de <code>linting</code>.</p>
+<figure>
+<p><img alt="Alt text" src="../img/fail.png">
+  </p>
+<figcaption>Integració fallida</figcaption>
+</figure>
+<p>Si fem clic sobre l'enllaç de l'error i després sobre build, ens mostrarà el pas que ha fallat al costat de l'eixida per consola del contenidor.</p>
+<figure>
+<p><img alt="Alt text" src="../img/console.png">
+  </p>
+<figcaption>Eixida per consola del contenidor</figcaption>
+</figure>
+<h3 id="quart-pas-modifiquem-el-codi-per-corregir-els-erros">Quart pas - modifiquem el codi per corregir els erros</h3>
+<p>Ens portem el codi a local i corregim els errors que ens indica el pylint, quedant l'arxiu com segueix:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="sd">"""Módulo que contiene la función es_primo"""</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">import</span> <span class="nn">math</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">numero</span><span class="p">):</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">    </span><span class="sd">"""</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="sd">   Función para determinar si un número es primo:</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="sd">   Entrada:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="sd">   - entero: número entero a determinar si es primo</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="sd">   Salida:</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="sd">   - True/False: en caso de ser primo o no</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="sd">   """</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>    <span class="k">if</span> <span class="n">numero</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)):</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>        <span class="k">if</span> <span class="n">numero</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a>            <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a>    <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">'__main__'</span><span class="p">:</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s1"> -&gt; </span><span class="si">{</span><span class="n">es_primo</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition tip">
+<p class="admonition-title">Comprovació en local</p>
+<p>Abans d'enviar els canvis, comproveu que el linter et dona una puntuació de 10 i que no heu introduït errors en la refactorització utilitzant pytest. Si tot és correcte ja podeu enviar el codi per a la seua integració. En cas de no ser-ho, corregeix els errors abans de la integració.</p>
+</div>
+<p>Finalement comprova que la integració ha sigut satisfactòria a <code>github actions</code>.</p>
+<figure>
+<p><img alt="Alt text" src="../img/build_pass.png">
+  </p>
+<figcaption>Integració satisfactòria</figcaption>
+</figure>
+<p>Pots veure les eixides per consola de cada un dels passos:</p>
+<figure>
+<p><img alt="Alt text" src="../img/build_console.png">
+  </p>
+<figcaption>Eixida per consola dels passos</figcaption>
+</figure>
+<p>Al següent enllaç tens el <a href="https://github.com/fpieseljust/ci_es_primo/">repositori públic amb integració</a> continua que hem utilitzat a esta activitat.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.annotate", "content.code.copy", "search.suggest"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

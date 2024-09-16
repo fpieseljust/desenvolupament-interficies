@@ -1,0 +1,41 @@
+**Examen de Desenvolupament d'Interfícies**
+
+---
+
+**Pregunta 1: Creació d'un Formulari Bàsic (3 punts)**
+
+Escriviu una aplicació utilitzant PySide6 que permeta registrar les dades d'un usuari en un formulari. El formulari hauria de contindre els següents camps:
+
+1. DNI
+2. Nom i cognoms
+4. Sexe
+5. Edat
+6. Direcció
+
+A més, tindrà un botó "Guardar" que, quan es prema, hauria de desar les dades introduïdes en una estructura de dades per al tractament intern de l'aplicació. Es recomana utilitzar un diccionari de Python (estructura idèntica a un JSON) on es vagen acumulant les dades i la clau siga el DNI.
+
+Fes un xicotet `main` que s'executarà en cas de llançar el mòdul però no si s'importa des d'un altre mòdul, per tal de poder provar el mòdul de forma independent.
+
+Nota: No es necessitarà validar que els camps són correctes.
+
+---
+
+**Pregunta 2: Mostrar Informació de l'Usuari (2 punts)**
+
+Amplieu l'aplicació anterior afegint una funcionalitat per mostrar la informació guardada dels usuaris. Quan es seleccione aquesta opció des del menú de l'aplicació, s'hauria de mostrar un diàleg amb un desplegable que conté els DNIs dels usuaris guardats. En seleccionar un DNI, s'ha de carregar la informació corresponent al formulari de la pregunta anterior, amb la possibilitat de guardar els canvis.
+
+---
+
+**Pregunta 3: Generació d'Estadístiques (3 punts)**
+
+Afegiu al menú una opció per a generar estadístiques sobre les dades dels usuaris. Quan aquesta opció siga seleccionada, cal crear un informe de datapane amb un gràfic de pastís mostrant el número d'usuaris homes i dones que es guardarà a disc:
+
+- Nombre d'usuaris per sexe (Home/Dona).
+
+---
+
+**Pregunta 4: Creació d'Informe (2 punts)**
+
+Fes que l'anterior informe es mostre a l'aplicació en una finestra emergent.
+
+---
