@@ -4442,11 +4442,17 @@ Moltes vegades s'utilitza en combinació amb la funció <strong>format()</strong
 <span class="normal"><a href="#__codelineno-45-2">2</a></span>
 <span class="normal"><a href="#__codelineno-45-3">3</a></span>
 <span class="normal"><a href="#__codelineno-45-4">4</a></span>
-<span class="normal"><a href="#__codelineno-45-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
-<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'El valor d</span><span class="se">\'</span><span class="s1">x és </span><span class="si">{}</span><span class="s1"> i el de y és </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
-<a id="__codelineno-45-3" name="__codelineno-45-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="c1"># Fixeu-se que hem escapat el caracter '</span>
-<a id="__codelineno-45-4" name="__codelineno-45-4"></a><span class="n">El</span> <span class="n">valor</span> <span class="n">d</span><span class="s1">'x és 5 i el de y és 10</span>
-<a id="__codelineno-45-5" name="__codelineno-45-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s1">'Hola </span><span class="si">{nom}</span><span class="s1">, </span><span class="si">{salutacio}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">salutacio</span> <span class="o">=</span> <span class="s1">'Bon dia'</span><span class="p">,</span> <span class="n">nom</span> <span class="o">=</span> <span class="s1">'Pau'</span><span class="p">))</span>
+<span class="normal"><a href="#__codelineno-45-5">5</a></span>
+<span class="normal"><a href="#__codelineno-45-6">6</a></span>
+<span class="normal"><a href="#__codelineno-45-7">7</a></span>
+<span class="normal"><a href="#__codelineno-45-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<a id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'El valor d</span><span class="se">\'</span><span class="s1">x és </span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1"> i el de y és </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<a id="__codelineno-45-3" name="__codelineno-45-3"></a><span class="c1"># El valor d'x és 5 i el de y és 10</span>
+<a id="__codelineno-45-4" name="__codelineno-45-4"></a><span class="c1"># Fixeu-se que hem escapat el caracter '</span>
+<a id="__codelineno-45-5" name="__codelineno-45-5"></a><span class="n">salutacio</span> <span class="o">=</span> <span class="s1">'Bon dia'</span>
+<a id="__codelineno-45-6" name="__codelineno-45-6"></a><span class="n">nom</span> <span class="o">=</span> <span class="s1">'Pau'</span>
+<a id="__codelineno-45-7" name="__codelineno-45-7"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'Hola </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">salutacio</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<a id="__codelineno-45-8" name="__codelineno-45-8"></a><span class="c1"># Hola Pau, Bon dia</span>
 </code></pre></div></td></tr></table></div>
 <h4 id="721-activitat-4">7.2.1. Activitat 4</h4>
 <p>Implementa el programa "Hola món" utilitzant la funció format.</p>
