@@ -2945,7 +2945,7 @@
 <li>La tercera ampliació serà un <strong>sistema de nivells</strong>. Cada vegada que el jugador supere un múltiple de 500 punts, el joc canviarà a un nivell superior, començant la partida en el nivell 1. A més, el nivell serà visible en la pantalla, al costat de la puntuació.</li>
 <li>
 <p>La quarta ampliació serà que la <strong>dificultat</strong> del joc anirà creixent amb els nivells. Al principi del joc, es crearan enemics cada 500ms i la seua velocitat serà un número aleatori entre 1 i 10. En el segon nivell, la velocitat de creació seran 450 ms i les velocitats aniran entre 3 i 12. La idea és parametritzar els valors segons el nivell, per exemple, per a la velocitat de creació podria ser:</p>
-<div class="arithmatex">\[v_c =  100 + (450 - 50 * nivell)\]</div>
+<div class="arithmatex">\[v_c =  (500 / nivell) + 50\]</div>
 <div class="arithmatex">\[v_e = random(2 * nivell, 10 + 3 * nivell)\]</div>
 <blockquote>
 <p>On <span class="arithmatex">\(v_c\)</span> és la velocitat de creació d'enemics<br>
