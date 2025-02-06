@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://fpieseljust.github.io/desenvolupament-interficies/unitats/9-Testing-distribucio/tasques/activitats/2-tdd/">
+        <link rel="canonical" href="https://fpieseljust.github.io/desenvolupament-interficies/examens/2a%2024-25/enunciat/">
       
       
-        <link rel="prev" href="../1-pytest/">
+        <link rel="prev" href="../../..">
       
       
-        <link rel="next" href="../3-ci/">
+        <link rel="next" href="../../../unitats/1-python/teoria/1%20-%20Introducci%C3%B3/">
       
       
-      <link rel="icon" href="../../../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
     
     
       
-        <title>Activitat resolta 2 - Desenvolupament guiat per proves - Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"</title>
+        <title>Examen 2a semipresencial - Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.35f28582.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#activitat-resolta-2-tdd" class="md-skip">
+        <a href="#examen-2a-avaluacio-desenvolupament-dinterficies" class="md-skip">
           Skip to content
         </a>
       
@@ -90,7 +90,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-header__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
+    <a href="../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-header__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Activitat resolta 2 - Desenvolupament guiat per proves
+              Examen 2a semipresencial
             
           </span>
         </div>
@@ -223,7 +223,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-nav__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
+    <a href="../../.." title="Desenvolupament d&#39;interfícies- 2n DAM - IES Jaume II &#34;El Just&#34;" class="md-nav__button md-logo" aria-label="Desenvolupament d'interfícies- 2n DAM - IES Jaume II "El Just"" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -241,7 +241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -258,10 +258,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../../examens/2a%2024-25/enunciat/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -270,6 +279,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -351,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+      <a href="../../../unitats/1-python/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -372,7 +382,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/teoria/2%20-%20Control%20de%20fluxe/" class="md-nav__link">
+      <a href="../../../unitats/1-python/teoria/2%20-%20Control%20de%20fluxe/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -393,7 +403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/teoria/3%20-%20Funcions/" class="md-nav__link">
+      <a href="../../../unitats/1-python/teoria/3%20-%20Funcions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -414,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/teoria/4%20-%20Fitxers/" class="md-nav__link">
+      <a href="../../../unitats/1-python/teoria/4%20-%20Fitxers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -435,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/teoria/5%20-%20Excepcions/" class="md-nav__link">
+      <a href="../../../unitats/1-python/teoria/5%20-%20Excepcions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -456,7 +466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/teoria/6%20-%20POO/" class="md-nav__link">
+      <a href="../../../unitats/1-python/teoria/6%20-%20POO/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -520,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/1%20-%20PyGame/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/1%20-%20PyGame/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -541,7 +551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/2%20-%20Disseny/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/2%20-%20Disseny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -562,7 +572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/3%20-%20Sprites/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/3%20-%20Sprites/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -583,7 +593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/4%20-%20Imatges/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/4%20-%20Imatges/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -604,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/5%20-%20So/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/5%20-%20So/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -625,7 +635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/6%20-%20Conclusi%C3%B3/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/6%20-%20Conclusi%C3%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -681,7 +691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/tasques/1%20-%20Obligatori/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/tasques/1%20-%20Obligatori/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -702,7 +712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/tasques/2%20-%20Projecte/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/tasques/2%20-%20Projecte/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,7 +733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../1-python/pr%C3%A0ctiques/tasques/3%20-%20Qualificaci%C3%B3/" class="md-nav__link">
+      <a href="../../../unitats/1-python/pr%C3%A0ctiques/tasques/3%20-%20Qualificaci%C3%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -837,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../2-intro-interficies/teoria/1%20-%20Introduccio/" class="md-nav__link">
+      <a href="../../../unitats/2-intro-interficies/teoria/1%20-%20Introduccio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -858,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../2-intro-interficies/teoria/2%20-%20Usabilitat/" class="md-nav__link">
+      <a href="../../../unitats/2-intro-interficies/teoria/2%20-%20Usabilitat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,7 +889,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../2-intro-interficies/teoria/3%20-%20Pautes%20de%20Disseny/" class="md-nav__link">
+      <a href="../../../unitats/2-intro-interficies/teoria/3%20-%20Pautes%20de%20Disseny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -943,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../2-intro-interficies/tasques/1%20-%20Activitats/" class="md-nav__link">
+      <a href="../../../unitats/2-intro-interficies/tasques/1%20-%20Activitats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -964,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../2-intro-interficies/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+      <a href="../../../unitats/2-intro-interficies/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -993,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../2-intro-interficies/enllaços/enllaços.md" class="md-nav__link">
+      <a href="../../../unitats/2-intro-interficies/enllaços/enllaços.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1091,7 +1101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1112,7 +1122,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/teoria/2%20-%20Flet-app/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/teoria/2%20-%20Flet-app/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1133,7 +1143,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/teoria/3%20-%20Layouts/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/teoria/3%20-%20Layouts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1154,7 +1164,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/teoria/4%20-%20Navegacio/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/teoria/4%20-%20Navegacio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1175,7 +1185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/teoria/5%20-%20Dialegs/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/teoria/5%20-%20Dialegs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1196,7 +1206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/teoria/6%20-%20Emmagatzematge/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/teoria/6%20-%20Emmagatzematge/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1217,7 +1227,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/teoria/7%20-%20Aplicacions%20multiusuari/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/teoria/7%20-%20Aplicacions%20multiusuari/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,7 +1248,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/teoria/8%20-%20Controls%20definits%20per%20l%27usuari/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/teoria/8%20-%20Controls%20definits%20per%20l%27usuari/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1302,7 +1312,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/tasques/1%20-%20Activitats/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/tasques/1%20-%20Activitats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1323,7 +1333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/tasques/2%20-%20Practiques/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/tasques/2%20-%20Practiques/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1352,7 +1362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../3-GUI-Flet/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
+      <a href="../../../unitats/3-GUI-Flet/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1450,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../4-GUI-PySide6/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
+      <a href="../../../unitats/4-GUI-PySide6/teoria/1%20-%20Introducci%C3%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1471,7 +1481,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../4-GUI-PySide6/teoria/2%20-%20Controls%20%C3%BAs%20com%C3%BA/" class="md-nav__link">
+      <a href="../../../unitats/4-GUI-PySide6/teoria/2%20-%20Controls%20%C3%BAs%20com%C3%BA/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1492,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../4-GUI-PySide6/teoria/3%20-%20Layouts/" class="md-nav__link">
+      <a href="../../../unitats/4-GUI-PySide6/teoria/3%20-%20Layouts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1513,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../4-GUI-PySide6/teoria/4%20-%20Menus/" class="md-nav__link">
+      <a href="../../../unitats/4-GUI-PySide6/teoria/4%20-%20Menus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1534,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../4-GUI-PySide6/teoria/5%20-%20Dialegs/" class="md-nav__link">
+      <a href="../../../unitats/4-GUI-PySide6/teoria/5%20-%20Dialegs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1598,7 +1608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../4-GUI-PySide6/tasques/1%20-%20Activitats/" class="md-nav__link">
+      <a href="../../../unitats/4-GUI-PySide6/tasques/1%20-%20Activitats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1619,7 +1629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../4-GUI-PySide6/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+      <a href="../../../unitats/4-GUI-PySide6/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1725,7 +1735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../5-Interficies-LM/teoria/1-Llenguatges%20de%20marques%20per%20a%20la%20generaci%C3%B3%20d%27interf%C3%ADcies/" class="md-nav__link">
+      <a href="../../../unitats/5-Interficies-LM/teoria/1-Llenguatges%20de%20marques%20per%20a%20la%20generaci%C3%B3%20d%27interf%C3%ADcies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1746,7 +1756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../5-Interficies-LM/teoria/2-Ferramentes%20de%20disseny%20basades%20en%20llenguatges%20de%20marques/" class="md-nav__link">
+      <a href="../../../unitats/5-Interficies-LM/teoria/2-Ferramentes%20de%20disseny%20basades%20en%20llenguatges%20de%20marques/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1767,7 +1777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../5-Interficies-LM/teoria/3-%C3%9As%20de%20la%20interf%C3%ADcie%20en%20una%20aplicaci%C3%B3/" class="md-nav__link">
+      <a href="../../../unitats/5-Interficies-LM/teoria/3-%C3%9As%20de%20la%20interf%C3%ADcie%20en%20una%20aplicaci%C3%B3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1788,7 +1798,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../5-Interficies-LM/teoria/4-Funcions%20avan%C3%A7ades%20de%20la%20ferramenta%20de%20disseny/" class="md-nav__link">
+      <a href="../../../unitats/5-Interficies-LM/teoria/4-Funcions%20avan%C3%A7ades%20de%20la%20ferramenta%20de%20disseny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1852,7 +1862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../5-Interficies-LM/tasques/1%20-%20Activitats/" class="md-nav__link">
+      <a href="../../../unitats/5-Interficies-LM/tasques/1%20-%20Activitats/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1873,7 +1883,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../5-Interficies-LM/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
+      <a href="../../../unitats/5-Interficies-LM/tasques/2%20-%20Pr%C3%A0ctiques/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1902,7 +1912,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../5-Interficies-LM/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
+      <a href="../../../unitats/5-Interficies-LM/enlla%C3%A7os/enlla%C3%A7os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2000,7 +2010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../6-Informes/teoria/1-Introduccio%20als%20informes/" class="md-nav__link">
+      <a href="../../../unitats/6-Informes/teoria/1-Introduccio%20als%20informes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2021,7 +2031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../6-Informes/teoria/2-Disseny%20d%27informes/" class="md-nav__link">
+      <a href="../../../unitats/6-Informes/teoria/2-Disseny%20d%27informes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2042,7 +2052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../6-Informes/teoria/3-Grafics/" class="md-nav__link">
+      <a href="../../../unitats/6-Informes/teoria/3-Grafics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2063,7 +2073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../6-Informes/teoria/4-Aplicacions%20amb%20informes/" class="md-nav__link">
+      <a href="../../../unitats/6-Informes/teoria/4-Aplicacions%20amb%20informes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2127,7 +2137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../6-Informes/tasques/practica1/" class="md-nav__link">
+      <a href="../../../unitats/6-Informes/tasques/practica1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2148,7 +2158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../6-Informes/tasques/practica2/" class="md-nav__link">
+      <a href="../../../unitats/6-Informes/tasques/practica2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2177,7 +2187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../6-Informes/enlla%C3%A7os/" class="md-nav__link">
+      <a href="../../../unitats/6-Informes/enlla%C3%A7os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2202,19 +2212,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -2228,7 +2236,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Unitat 7 - Proves, distribució i documentació d'aplicacions
@@ -2277,7 +2285,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../teoria/1-metodologies/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/teoria/1-metodologies/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2298,7 +2306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../teoria/2-tipus-proves/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/teoria/2-tipus-proves/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2319,7 +2327,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../teoria/3-TDD/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/teoria/3-TDD/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2340,7 +2348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../teoria/4-cd-ci/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/teoria/4-cd-ci/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2361,7 +2369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../teoria/5-empaquetat-distribucio/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/teoria/5-empaquetat-distribucio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2387,19 +2395,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2" >
         
           
           <label class="md-nav__link" for="__nav_9_2" id="__nav_9_2_label" tabindex="0">
@@ -2413,7 +2419,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2">
             <span class="md-nav__icon md-icon"></span>
             Tasques
@@ -2424,19 +2430,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_2_1" >
         
           
           <label class="md-nav__link" for="__nav_9_2_1" id="__nav_9_2_1_label" tabindex="0">
@@ -2450,7 +2454,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_9_2_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_2_1">
             <span class="md-nav__icon md-icon"></span>
             Activitats resoltes
@@ -2464,7 +2468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../1-pytest/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/activitats/1-pytest/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2482,30 +2486,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Activitat resolta 2 - Desenvolupament guiat per proves
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/activitats/2-tdd/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2514,104 +2498,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#objectiu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objectiu
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solucio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Solució
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Solució">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#regla-1-primer-el-test-despres-la-codificacio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 1: Primer el test, després la codificació.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-2-afegeix-el-minim-codi-per-superar-el-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 2: Afegeix el mínim codi per superar el test
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-3-no-haurieu-de-tindre-mes-dun-test-no-superat-a-la-vegada" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 3: No hauríeu de tindre més d'un test no superat a la vegada
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-4-escriu-codi-que-passe-el-test-despres-refactoritza-el-codi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 4: Escriu codi que passe el test, després refactoritza el codi.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-5-un-test-hauria-de-fallar-la-primera-vegada-que-ho-escrius-en-cas-contrari-preguntat-per-que-ho-afegeixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 5: Un test hauria de fallar la primera vegada que ho escrius, en cas contrari pregunta't per què ho afegeixes.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-6-mai-refactoritzar-sense-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 6: mai refactoritzar sense tests.
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2624,7 +2510,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../3-ci/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/activitats/3-ci/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2645,7 +2531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../4-executable-windows/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/activitats/4-executable-windows/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2666,7 +2552,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../5-instalador-linux/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/activitats/5-instalador-linux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2730,7 +2616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../practiques/1-pytest-cartera/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/practiques/1-pytest-cartera/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2751,7 +2637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../practiques/2-pytest-qt/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/practiques/2-pytest-qt/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2772,7 +2658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../practiques/3-tdd-fatorial/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/practiques/3-tdd-fatorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2793,7 +2679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../practiques/4-ci-factorial/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/practiques/4-ci-factorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2814,7 +2700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../practiques/5-executable-instalador/" class="md-nav__link">
+      <a href="../../../unitats/9-Testing-distribucio/tasques/practiques/5-executable-instalador/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2893,7 +2779,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../info/guia_alumne_DI/" class="md-nav__link">
+      <a href="../../../info/guia_alumne_DI/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2949,7 +2835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../info/qualificacio/rubrica/" class="md-nav__link">
+      <a href="../../../info/qualificacio/rubrica/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2985,7 +2871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/" class="md-nav__link">
+      <a href="../../../about/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3018,92 +2904,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#objectiu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objectiu
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solucio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Solució
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Solució">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#regla-1-primer-el-test-despres-la-codificacio" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 1: Primer el test, després la codificació.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-2-afegeix-el-minim-codi-per-superar-el-test" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 2: Afegeix el mínim codi per superar el test
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-3-no-haurieu-de-tindre-mes-dun-test-no-superat-a-la-vegada" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 3: No hauríeu de tindre més d'un test no superat a la vegada
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-4-escriu-codi-que-passe-el-test-despres-refactoritza-el-codi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 4: Escriu codi que passe el test, després refactoritza el codi.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-5-un-test-hauria-de-fallar-la-primera-vegada-que-ho-escrius-en-cas-contrari-preguntat-per-que-ho-afegeixes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 5: Un test hauria de fallar la primera vegada que ho escrius, en cas contrari pregunta't per què ho afegeixes.
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#regla-6-mai-refactoritzar-sense-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Regla 6: mai refactoritzar sense tests.
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3117,168 +2917,46 @@
                   
 
 
-<div><h1 id="activitat-resolta-2-tdd">Activitat resolta 2 - TDD</h1>
-<p>Ja hem insistit en la importància que tenen les proves de programari en el desenvolupament de les aplicacions per assegurar un alt grau de qualitat als nostres projectes. En aquesta unitat ens centrarem en una tècnica de programació centrada en aquesta fase de proves que a més s'ajusta a la filosofia de desenvolupament àgil. És l'anomenat desenvolupament guiat per proves odesenvolupament impulsat per proves(TDD).</p>
-<h2 id="objectiu">Objectiu</h2>
-<p>Ara que ja sabem escriure proves unitàries amb pytest i automatitzar-ne l'execució, tot sense sortir del nostre entorn de desenvolupament, aplicarem la tècnica de TDD per realitzar la implementació d'una funció per esbrinar si un nombre és primer.</p>
-<h2 id="solucio">Solució</h2>
-<p>Seguirem una sèrie de regles per seguir el cicle de desenvolupament definit per TDD.</p>
-<p>El primer que farem serà crear una estructura pel nostre projecte amb el codi i els tests separats:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span>
-<span class="normal"><a href="#__codelineno-0-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>.
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>├──<span class="w"> </span>src
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>│<span class="w"> </span>├──<span class="w"> </span>funcions.py
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>│<span class="w"> </span>└──<span class="w"> </span>__init__.py
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>└──<span class="w"> </span>proves
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span>├──<span class="w"> </span>__init__.py
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span>└──<span class="w"> </span>test_src
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span>├──<span class="w"> </span>__init__.py
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span>└──<span class="w"> </span>test_funcions.py
-</code></pre></div></td></tr></table></div>
-<h3 id="regla-1-primer-el-test-despres-la-codificacio"><strong>Regla 1</strong>: Primer el test, després la codificació.</h3>
-<p>Així que la primera cosa que haurem d'escriure és el test i verificar que falla.</p>
-<p>El número 1 no està considerat com a primer, així que si cridem a la funció amb el número 1 hauria de retornar False. Per tant podem escriure la prova següent:</p>
-<div class="admonition example">
-<p class="admonition-title">test_src/test_funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">def</span> <span class="nf">test_primo_1</span><span class="p">():</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="k">assert</span> <span class="n">es_primo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<p>En executar el test al VSCode ens fallarà, igual que si ho fem per consola. L'error serà el següent:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span> <span class="nf">test_primo_1</span><span class="p">():</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="o">&gt;</span> <span class="k">assert</span> <span class="n">ca_primo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">E</span> <span class="ne">NameError</span><span class="p">:</span> <span class="n">el</span> <span class="n">nom</span> <span class="s1">'es_primo'</span> <span class="n">no</span> <span class="n">està</span> <span class="n">definit</span>
-</code></pre></div></td></tr></table></div>
-<h3 id="regla-2-afegeix-el-minim-codi-per-superar-el-test"><strong>Regla 2</strong>: Afegeix el mínim codi per superar el test</h3>
-<p>Així que definirem la funció amb la mínima implementació per superar el test. Els fitxers quedaran com segueix:</p>
-<div class="admonition example">
-<p class="admonition-title">src/funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
-<span class="normal"><a href="#__codelineno-3-2">2</a></span>
-<span class="normal"><a href="#__codelineno-3-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="k">return</span> <span class="kc">False</span>
-</code></pre></div></td></tr></table></div>
-<p><figure markdown>
-  <img alt="Pass test" src="../img/pass.png" width="300">
-  <figcaption>Supera el test</figcaption>
-</figure></p>
-</div>
-<h3 id="regla-3-no-haurieu-de-tindre-mes-dun-test-no-superat-a-la-vegada"><strong>Regla 3</strong>: No hauríeu de tindre més d'un test no superat a la vegada</h3>
-<p>Aquesta regla no és una regla que s'hagi de seguir estrictament, però ajuda el programador a centrar-se en un sol problema. Ara que la nostra implementació supera el test per al número 1, escriurem un test per a un nombre primer. Farem servir el 2 per a la nostra prova.</p>
-<div class="admonition example">
-<p class="admonition-title">test_src/test_funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">def</span> <span class="nf">test_es_primo_numero_primo</span><span class="p">():</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="k">assert</span> <span class="n">es_primo</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
-</code></pre></div></td></tr></table></div>
-<p>Si executem els tests, observarem que aquest nou test falla, així que refactoritzarem el codi de la funció es_primo perquè supere tots els tests amb el mínim codi possible:</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">src/funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span>
-<span class="normal"><a href="#__codelineno-5-3">3</a></span>
-<span class="normal"><a href="#__codelineno-5-4">4</a></span>
-<span class="normal"><a href="#__codelineno-5-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>        <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>        <span class="k">return</span> <span class="kc">True</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<h3 id="regla-4-escriu-codi-que-passe-el-test-despres-refactoritza-el-codi"><strong>Regla 4</strong>: Escriu codi que passe el test, després refactoritza el codi.</h3>
-<p>El codi anterior passa ambdues proves, però podem veure fàcilment que la implementació no és correcta. Quan afegiu un test per a números negatius o el zero, el test fallarà.</p>
-<div class="admonition example">
-<p class="admonition-title">test_src/test_funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">def</span> <span class="nf">test_es_primo_negativo</span><span class="p">():</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="k">assert</span> <span class="n">es_primo</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">)</span> <span class="o">==</span> <span class="kc">False</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<p>La refactorització quedaria com:</p>
-<div class="admonition example">
-<p class="admonition-title">src/funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span>
-<span class="normal"><a href="#__codelineno-7-3">3</a></span>
-<span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>        <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>        <span class="k">return</span> <span class="kc">True</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<h3 id="regla-5-un-test-hauria-de-fallar-la-primera-vegada-que-ho-escrius-en-cas-contrari-preguntat-per-que-ho-afegeixes"><strong>Regla 5</strong>: Un test hauria de fallar la primera vegada que ho escrius, en cas contrari pregunta't per què ho afegeixes.</h3>
-<p>Si no hi ha cap test que fallen, no hauríeu d'afegir nova funcionalitat. Això us obliga a escriure primer els test de nou abans que el codi.</p>
-<p>Si escrivim un test per a qualsevol nombre compost (no primer més gran que 2) de nou fallarà, ja que no tornarà que sí que és primer.</p>
-<div class="admonition example">
-<p class="admonition-title">test_src/test_funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">def</span> <span class="nf">test_es_primo_numero_primo_mayor_2</span><span class="p">():</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="k">assert</span> <span class="n">es_primo</span><span class="p">(</span><span class="mi">29</span><span class="p">)</span> <span class="o">==</span> <span class="kc">True</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<p>La refactorització quedaria com:</p>
-<div class="admonition example">
-<p class="admonition-title">src/funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span>
-<span class="normal"><a href="#__codelineno-9-6">6</a></span>
-<span class="normal"><a href="#__codelineno-9-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a>        <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>        <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a>            <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a>    <span class="k">return</span> <span class="kc">True</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<h3 id="regla-6-mai-refactoritzar-sense-tests"><strong>Regla 6</strong>: mai refactoritzar sense tests.</h3>
-<p>Un cop tenim ben implementats els tests, podem refactoritzar el codi assegurant que la refactorització no introdueix errors que anteriorment no teníem.</p>
-<p>Si observem la funció, la podem fer més eficient canviant el rang, ja que el divisor més gran d'un nombre no pot ser més gran que la part sencera de la meitat. Així que podem refactoritzar i deixar la implementació com segueix, fent la funció molt més eficient:</p>
-<div class="admonition example">
-<p class="admonition-title">src/funcions.py</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">math</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="k">def</span> <span class="nf">es_primo</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a>    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a>        <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a>    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)):</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a>        <span class="k">if</span> <span class="n">num</span> <span class="o">%</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a>            <span class="k">return</span> <span class="kc">False</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a>    <span class="k">return</span> <span class="kc">True</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<p>Si executem els tests, veurem que els supera tots, assegurant que la nostra implementació és correcta.</p>
-<div class="admonition tip">
-<p class="admonition-title">Instruccions addicionals sobre el seu ús en un context pràctic real.</p>
-<p>En un desenvolupament real, cada programador provaria el codi en local abans d'enviar les seves modificacions al repositori del projecte. Encara que s'enviaren per error canvis que no superaren els tests, el repositori no els posaria en producció, ja que fallarien les proves. Si els tests locals se superen, es pot estar molt segur que no s'introduiran errors que anteriorment no estigueren en el codi, reduint així la possibilitat de defectes.</p>
-</div></div>
+<div><h1 id="examen-2a-avaluacio-desenvolupament-dinterficies">Examen 2a Avaluació - Desenvolupament d'Interfícies</h1>
+<p>Enunciat de l'Examen: Gestió de Productes amb PySide6</p>
+<p>Basant-te en el <a href="../codi.zip">codi proporcionat</a> (la interfície dissenyada en Qt Designer, el codi Python que gestiona la finestra principal amb el QTableWidget i la classe Database per a SQLite), realitzeu les següents modificacions:</p>
+<ol>
+<li>
+<p>(3 punts) Separació de la Interfície
+    La part del formulari (els camps per afegir i modificar productes) s'ha de moure a una finestra independent (un diàleg o una nova finestra) que es llançarà des de la finestra principal mitjançant el un menú Productes amb les opcions Afegir i Modificar. Aquesta nova finestra s'encarregarà de modificar o afegir dades. Reviseu el formulari perquè la introducció de les dades es faça amb els widgets apropiats.</p>
+</li>
+<li>
+<p>(2 punts) Confirmació d'Accions Crítiques</p>
+<ul>
+<li>Abans d'aplicar una modificació sobre un producte existent, heu de mostrar un avís de confirmació que sol·liciti a l'usuari que confirmi l'acció.</li>
+<li>Abans d'eliminar un producte, l'aplicació haurà de mostrar un missatge d'avís per confirmar que realment es vol eliminar el producte seleccionat.</li>
+</ul>
+</li>
+<li>
+<p>(3 punts) Tests Automatitzats amb pytest-qt</p>
+<ul>
+<li>Afegiu tres tests utilitzant pytest-qt per comprovar que les funcionalitats d'afegir, modificar i eliminar productes funcionen correctament.</li>
+<li>Verifiqueu que, en introduir dades vàlides i clicant el botó d'afegir, el producte s'insereix correctament en la base de dades i apareix a la taula.</li>
+<li>Comproveu que, en seleccionar un producte, obrint la finestra del formulari, modificant les dades i confirmant la modificació, els canvis es reflecteixen tant en la base de dades com a la taula.</li>
+<li>Assegureu-vos que, en seleccionar un producte i confirmar l'acció d'eliminar, el producte desapareix de la base de dades i de la taula.</li>
+</ul>
+</li>
+<li>
+<p>(1 punt) Integració Contínua amb GitHub Actions</p>
+<ul>
+<li>Configureu la integració contínua creant un workflow de GitHub Actions que s'encarregue d'executar els tests (incloent els de pytest-qt) cada vegada que es faça un push, però no un pull request.</li>
+<li>El workflow ha d'instal·lar les dependències necessàries, incloent PySide6 i pytest-qt.</li>
+<li>El workflow ha de fallar en cas que algun dels tests no passi.</li>
+</ul>
+</li>
+<li>
+<p>(1 punt) Creació de l'Executable</p>
+<ul>
+<li>Construi un executable de l'aplicació per al vostre sistema operatiu.</li>
+<li>L'executable ha d'incloure totes les funcionalitats implementades i estar preparat per distribuir-se sense necessitat d'instal·lar les dependències manualment.</li>
+</ul>
+</li>
+</ol></div>
 
 
 
@@ -3325,10 +3003,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["content.code.annotate", "content.code.copy", "search.suggest"], "search": "../../../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.annotate", "content.code.copy", "search.suggest"], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

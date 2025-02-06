@@ -260,80 +260,16 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Examens
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Examens
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../../../examens/primera/model%20a/" class="md-nav__link">
+      <a href="../../../../examens/2a%2024-25/enunciat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Examen 1a presencial- Model A
+    Examen 2a semipresencial
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../examens/primera/model%20b/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Examen 1a presencial- Model B
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -3361,18 +3297,63 @@
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span>
 <span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">def</span> <span class="nf">carregar_traductor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="n">translator</span> <span class="o">=</span> <span class="n">QTranslator</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    <span class="n">translations</span> <span class="o">=</span> <span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">location</span><span class="p">(</span><span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">TranslationsPath</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="n">translator</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"qt_ca"</span><span class="p">,</span> <span class="n">translations</span><span class="p">)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="n">app</span><span class="o">.</span><span class="n">installTranslator</span><span class="p">(</span><span class="n">translator</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="o">...</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">...</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">QTranslator</span><span class="p">,</span> <span class="n">QLibraryInfo</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="o">...</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="k">def</span> <span class="nf">carregar_traductor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">app</span><span class="p">):</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="n">translator</span> <span class="o">=</span> <span class="n">QTranslator</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="n">translations</span> <span class="o">=</span> <span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">location</span><span class="p">(</span><span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">TranslationsPath</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>    <span class="n">translator</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"qt_ca"</span><span class="p">,</span> <span class="n">translations</span><span class="p">)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">installTranslator</span><span class="p">(</span><span class="n">translator</span><span class="p">)</span>
 <a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="n">ventana_principal</span> <span class="o">=</span> <span class="n">VentanaPrincipal</span><span class="p">()</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="n">ventana_principal</span><span class="o">.</span><span class="n">carregar_traductor</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="o">...</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="n">ventana_principal</span> <span class="o">=</span> <span class="n">VentanaPrincipal</span><span class="p">()</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="n">ventana_principal</span><span class="o">.</span><span class="n">carregar_traductor</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>També podem utilitzar l'idioma definit al sistema, averiguant-lo accedint al <em>locale</em>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">def</span> <span class="nf">carregar_traductor</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">translator</span> <span class="o">=</span> <span class="n">QTranslator</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">translations_path</span> <span class="o">=</span> <span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">location</span><span class="p">(</span><span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">TranslationsPath</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">locale</span> <span class="o">=</span> <span class="n">QLocale</span><span class="o">.</span><span class="n">system</span><span class="p">()</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">locale_name</span> <span class="o">=</span> <span class="n">locale</span><span class="o">.</span><span class="n">name</span><span class="p">()</span>  <span class="c1"># Exemple: "ca_ES", "en_US"</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1"># Primer intenta carregar la traducció completa (idioma + país)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="k">if</span> <span class="n">translator</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s2">"qt_</span><span class="si">{</span><span class="n">locale_name</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">translations_path</span><span class="p">):</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>    <span class="n">app</span><span class="o">.</span><span class="n">installTranslator</span><span class="p">(</span><span class="n">translator</span><span class="p">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Traducció carregada per a: </span><span class="si">{</span><span class="n">locale_name</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="c1"># Si no es troba, intenta només amb l'idioma</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="n">language_code</span> <span class="o">=</span> <span class="n">locale</span><span class="o">.</span><span class="n">languageToString</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">language</span><span class="p">())</span><span class="o">.</span><span class="n">lower</span><span class="p">()[:</span><span class="mi">2</span><span class="p">]</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>    <span class="k">if</span> <span class="n">translator</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="sa">f</span><span class="s2">"qt_</span><span class="si">{</span><span class="n">language_code</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span> <span class="n">translations_path</span><span class="p">):</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>        <span class="n">app</span><span class="o">.</span><span class="n">installTranslator</span><span class="p">(</span><span class="n">translator</span><span class="p">)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"Traducció carregada per a l'idioma: </span><span class="si">{</span><span class="n">language_code</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>        <span class="nb">print</span><span class="p">(</span><span class="s2">"No s'ha pogut carregar cap traducció. S'utilitzarà l'idioma per defecte."</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p><img alt="Dialeg Personalitzat" src="../images/dialeg_tradu%C3%AFt.png"></p>
@@ -3433,101 +3414,101 @@
 </ul>
 <div class="admonition example">
 <p class="admonition-title">Missatge crític típic d'algunes aplicacions</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span>
-<span class="normal"><a href="#__codelineno-3-19">19</a></span>
-<span class="normal"><a href="#__codelineno-3-20">20</a></span>
-<span class="normal"><a href="#__codelineno-3-21">21</a></span>
-<span class="normal"><a href="#__codelineno-3-22">22</a></span>
-<span class="normal"><a href="#__codelineno-3-23">23</a></span>
-<span class="normal"><a href="#__codelineno-3-24">24</a></span>
-<span class="normal"><a href="#__codelineno-3-25">25</a></span>
-<span class="normal"><a href="#__codelineno-3-26">26</a></span>
-<span class="normal"><a href="#__codelineno-3-27">27</a></span>
-<span class="normal"><a href="#__codelineno-3-28">28</a></span>
-<span class="normal"><a href="#__codelineno-3-29">29</a></span>
-<span class="normal"><a href="#__codelineno-3-30">30</a></span>
-<span class="normal"><a href="#__codelineno-3-31">31</a></span>
-<span class="normal"><a href="#__codelineno-3-32">32</a></span>
-<span class="normal"><a href="#__codelineno-3-33">33</a></span>
-<span class="normal"><a href="#__codelineno-3-34">34</a></span>
-<span class="normal"><a href="#__codelineno-3-35">35</a></span>
-<span class="normal"><a href="#__codelineno-3-36">36</a></span>
-<span class="normal"><a href="#__codelineno-3-37">37</a></span>
-<span class="normal"><a href="#__codelineno-3-38">38</a></span>
-<span class="normal"><a href="#__codelineno-3-39">39</a></span>
-<span class="normal"><a href="#__codelineno-3-40">40</a></span>
-<span class="normal"><a href="#__codelineno-3-41">41</a></span>
-<span class="normal"><a href="#__codelineno-3-42">42</a></span>
-<span class="normal"><a href="#__codelineno-3-43">43</a></span>
-<span class="normal"><a href="#__codelineno-3-44">44</a></span>
-<span class="normal"><a href="#__codelineno-3-45">45</a></span>
-<span class="normal"><a href="#__codelineno-3-46">46</a></span>
-<span class="normal"><a href="#__codelineno-3-47">47</a></span>
-<span class="normal"><a href="#__codelineno-3-48">48</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">QLibraryInfo</span><span class="p">,</span> <span class="n">QTranslator</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtWidgets</span> <span class="kn">import</span> <span class="p">(</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>    <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMessageBox</span><span class="p">,</span> <span class="n">QMainWindow</span><span class="p">,</span> <span class="n">QPushButton</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">)</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">class</span> <span class="nc">VentanaPrincipal</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Aplicación con mesaje crítico"</span><span class="p">)</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a>        <span class="n">boton</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">"Haz clic para ver el mensaje crítico"</span><span class="p">)</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a>        <span class="n">boton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mostrar_dialogo</span><span class="p">)</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">boton</span><span class="p">)</span>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="k">def</span> <span class="nf">mostrar_dialogo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a>        <span class="n">boton_pulsado</span> <span class="o">=</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span>
-<a id="__codelineno-3-19" name="__codelineno-3-19"></a>            <span class="bp">self</span><span class="p">,</span>
-<a id="__codelineno-3-20" name="__codelineno-3-20"></a>            <span class="s2">"Ejemplo de cuadro de mensaje crítico"</span><span class="p">,</span>
-<a id="__codelineno-3-21" name="__codelineno-3-21"></a>            <span class="s2">"Ha habído algun problema al realizar la acción"</span><span class="p">,</span>
-<a id="__codelineno-3-22" name="__codelineno-3-22"></a>            <span class="n">buttons</span><span class="o">=</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Discard</span> <span class="o">|</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">NoToAll</span> <span class="o">|</span>
-<a id="__codelineno-3-23" name="__codelineno-3-23"></a>                <span class="n">QMessageBox</span><span class="o">.</span><span class="n">Ignore</span><span class="p">,</span>
-<a id="__codelineno-3-24" name="__codelineno-3-24"></a>            <span class="n">defaultButton</span><span class="o">=</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Discard</span>
-<a id="__codelineno-3-25" name="__codelineno-3-25"></a>        <span class="p">)</span>
-<a id="__codelineno-3-26" name="__codelineno-3-26"></a>
-<a id="__codelineno-3-27" name="__codelineno-3-27"></a>        <span class="k">if</span> <span class="n">boton_pulsado</span> <span class="o">==</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">Discard</span><span class="p">:</span>
-<a id="__codelineno-3-28" name="__codelineno-3-28"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"Descartado!"</span><span class="p">)</span>
-<a id="__codelineno-3-29" name="__codelineno-3-29"></a>        <span class="k">elif</span> <span class="n">boton_pulsado</span> <span class="o">==</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">NoToAll</span><span class="p">:</span>
-<a id="__codelineno-3-30" name="__codelineno-3-30"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"No a todo!"</span><span class="p">)</span>
-<a id="__codelineno-3-31" name="__codelineno-3-31"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-3-32" name="__codelineno-3-32"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"Ignorado!"</span><span class="p">)</span>
-<a id="__codelineno-3-33" name="__codelineno-3-33"></a>
-<a id="__codelineno-3-34" name="__codelineno-3-34"></a><span class="k">def</span> <span class="nf">cargar_traductor</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
-<a id="__codelineno-3-35" name="__codelineno-3-35"></a>    <span class="n">translator</span> <span class="o">=</span> <span class="n">QTranslator</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<a id="__codelineno-3-36" name="__codelineno-3-36"></a>    <span class="n">translations</span> <span class="o">=</span> <span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">location</span><span class="p">(</span><span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">TranslationsPath</span><span class="p">)</span>
-<a id="__codelineno-3-37" name="__codelineno-3-37"></a>    <span class="n">translator</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"qt_ca"</span><span class="p">,</span> <span class="n">translations</span><span class="p">)</span>
-<a id="__codelineno-3-38" name="__codelineno-3-38"></a>    <span class="n">app</span><span class="o">.</span><span class="n">installTranslator</span><span class="p">(</span><span class="n">translator</span><span class="p">)</span>
-<a id="__codelineno-3-39" name="__codelineno-3-39"></a>
-<a id="__codelineno-3-40" name="__codelineno-3-40"></a>
-<a id="__codelineno-3-41" name="__codelineno-3-41"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
-<a id="__codelineno-3-42" name="__codelineno-3-42"></a>
-<a id="__codelineno-3-43" name="__codelineno-3-43"></a><span class="n">cargar_traductor</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
-<a id="__codelineno-3-44" name="__codelineno-3-44"></a>
-<a id="__codelineno-3-45" name="__codelineno-3-45"></a><span class="n">ventana_principal</span> <span class="o">=</span> <span class="n">VentanaPrincipal</span><span class="p">()</span>
-<a id="__codelineno-3-46" name="__codelineno-3-46"></a><span class="n">ventana_principal</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-3-47" name="__codelineno-3-47"></a>
-<a id="__codelineno-3-48" name="__codelineno-3-48"></a><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span>
+<span class="normal"><a href="#__codelineno-4-38">38</a></span>
+<span class="normal"><a href="#__codelineno-4-39">39</a></span>
+<span class="normal"><a href="#__codelineno-4-40">40</a></span>
+<span class="normal"><a href="#__codelineno-4-41">41</a></span>
+<span class="normal"><a href="#__codelineno-4-42">42</a></span>
+<span class="normal"><a href="#__codelineno-4-43">43</a></span>
+<span class="normal"><a href="#__codelineno-4-44">44</a></span>
+<span class="normal"><a href="#__codelineno-4-45">45</a></span>
+<span class="normal"><a href="#__codelineno-4-46">46</a></span>
+<span class="normal"><a href="#__codelineno-4-47">47</a></span>
+<span class="normal"><a href="#__codelineno-4-48">48</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">QLibraryInfo</span><span class="p">,</span> <span class="n">QTranslator</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtWidgets</span> <span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>    <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMessageBox</span><span class="p">,</span> <span class="n">QMainWindow</span><span class="p">,</span> <span class="n">QPushButton</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">class</span> <span class="nc">VentanaPrincipal</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Aplicación con mesaje crítico"</span><span class="p">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>        <span class="n">boton</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">"Haz clic para ver el mensaje crítico"</span><span class="p">)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="n">boton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mostrar_dialogo</span><span class="p">)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="n">boton</span><span class="p">)</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>    <span class="k">def</span> <span class="nf">mostrar_dialogo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>        <span class="n">boton_pulsado</span> <span class="o">=</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">critical</span><span class="p">(</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>            <span class="bp">self</span><span class="p">,</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>            <span class="s2">"Ejemplo de cuadro de mensaje crítico"</span><span class="p">,</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>            <span class="s2">"Ha habído algun problema al realizar la acción"</span><span class="p">,</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>            <span class="n">buttons</span><span class="o">=</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Discard</span> <span class="o">|</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">NoToAll</span> <span class="o">|</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a>                <span class="n">QMessageBox</span><span class="o">.</span><span class="n">Ignore</span><span class="p">,</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a>            <span class="n">defaultButton</span><span class="o">=</span><span class="n">QMessageBox</span><span class="o">.</span><span class="n">Discard</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a>        <span class="p">)</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a>        <span class="k">if</span> <span class="n">boton_pulsado</span> <span class="o">==</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">Discard</span><span class="p">:</span>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"Descartado!"</span><span class="p">)</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>        <span class="k">elif</span> <span class="n">boton_pulsado</span> <span class="o">==</span> <span class="n">QMessageBox</span><span class="o">.</span><span class="n">NoToAll</span><span class="p">:</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"No a todo!"</span><span class="p">)</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a>            <span class="nb">print</span><span class="p">(</span><span class="s2">"Ignorado!"</span><span class="p">)</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="k">def</span> <span class="nf">cargar_traductor</span><span class="p">(</span><span class="n">app</span><span class="p">):</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a>    <span class="n">translator</span> <span class="o">=</span> <span class="n">QTranslator</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36"></a>    <span class="n">translations</span> <span class="o">=</span> <span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">location</span><span class="p">(</span><span class="n">QLibraryInfo</span><span class="o">.</span><span class="n">TranslationsPath</span><span class="p">)</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37"></a>    <span class="n">translator</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">"qt_ca"</span><span class="p">,</span> <span class="n">translations</span><span class="p">)</span>
+<a id="__codelineno-4-38" name="__codelineno-4-38"></a>    <span class="n">app</span><span class="o">.</span><span class="n">installTranslator</span><span class="p">(</span><span class="n">translator</span><span class="p">)</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39"></a>
+<a id="__codelineno-4-40" name="__codelineno-4-40"></a>
+<a id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42"></a>
+<a id="__codelineno-4-43" name="__codelineno-4-43"></a><span class="n">cargar_traductor</span><span class="p">(</span><span class="n">app</span><span class="p">)</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44"></a>
+<a id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="n">ventana_principal</span> <span class="o">=</span> <span class="n">VentanaPrincipal</span><span class="p">()</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="n">ventana_principal</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-4-47" name="__codelineno-4-47"></a>
+<a id="__codelineno-4-48" name="__codelineno-4-48"></a><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 </div>
 <p>El resultat és el següent:</p>
@@ -3547,255 +3528,91 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Obrir arxiu</label><label for="__tabbed_1_2">Guardar arxiu</label><label for="__tabbed_1_3">Obtenir un color</label><label for="__tabbed_1_4">Obtenir una font</label><label for="__tabbed_1_5">Informació de l'usuari</label><label for="__tabbed_1_6">Barra de progrés</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span>
-<span class="normal"><a href="#__codelineno-4-4">4</a></span>
-<span class="normal"><a href="#__codelineno-4-5">5</a></span>
-<span class="normal"><a href="#__codelineno-4-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>    <span class="n">finestra_dialeg</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">"Obrir fitxer..."</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s2">"."</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>        <span class="nb">filter</span><span class="o">=</span><span class="s2">"Documents de text (*.txt);;Documents PDF (*.pdf)"</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>        <span class="n">selectedFilter</span><span class="o">=</span><span class="s2">"Documents de text (*.txt)"</span><span class="p">)</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="n">fitxer</span> <span class="o">=</span> <span class="n">finestra_dialeg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</code></pre></div></td></tr></table></div>
-</div>
-<div class="tabbed-block">
-<p>NOTA: Si el fitxer ja existeix ens demana confirmació de sobreescriptura
-</p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span>
 <span class="normal"><a href="#__codelineno-5-5">5</a></span>
-<span class="normal"><a href="#__codelineno-5-6">6</a></span>
-<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="n">finestra_dialeg</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">getSaveFileName</span><span class="p">(</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">"Desa fitxer ..."</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s2">"."</span><span class="p">,</span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="n">finestra_dialeg</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">getOpenFileName</span><span class="p">(</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">"Obrir fitxer..."</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s2">"."</span><span class="p">,</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="nb">filter</span><span class="o">=</span><span class="s2">"Documents de text (*.txt);;Documents PDF (*.pdf)"</span><span class="p">,</span>
 <a id="__codelineno-5-5" name="__codelineno-5-5"></a>        <span class="n">selectedFilter</span><span class="o">=</span><span class="s2">"Documents de text (*.txt)"</span><span class="p">)</span>
 <a id="__codelineno-5-6" name="__codelineno-5-6"></a>    <span class="n">fitxer</span> <span class="o">=</span> <span class="n">finestra_dialeg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">arxiu</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<img alt="" src="../images/dialeg_guardar.png">
 </div>
 <div class="tabbed-block">
-<p></p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<p>NOTA: Si el fitxer ja existeix ens demana confirmació de sobreescriptura
+</p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
 <span class="normal"><a href="#__codelineno-6-3">3</a></span>
 <span class="normal"><a href="#__codelineno-6-4">4</a></span>
 <span class="normal"><a href="#__codelineno-6-5">5</a></span>
-<span class="normal"><a href="#__codelineno-6-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="n">color</span> <span class="o">=</span> <span class="n">QColorDialog</span><span class="o">.</span><span class="n">getColor</span><span class="p">()</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>    <span class="k">if</span> <span class="n">color</span><span class="o">.</span><span class="n">isValid</span><span class="p">():</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>        <span class="c1"># Amb la següent línia assignem el color seleccionat</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>        <span class="c1"># com a color de fons del botó a través de CSS</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">f</span><span class="s2">"background-color: </span><span class="si">{</span><span class="n">color</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>    <span class="n">finestra_dialeg</span> <span class="o">=</span> <span class="n">QFileDialog</span><span class="o">.</span><span class="n">getSaveFileName</span><span class="p">(</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>        <span class="bp">self</span><span class="p">,</span> <span class="n">caption</span><span class="o">=</span><span class="s2">"Desa fitxer ..."</span><span class="p">,</span> <span class="nb">dir</span><span class="o">=</span><span class="s2">"."</span><span class="p">,</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>        <span class="nb">filter</span><span class="o">=</span><span class="s2">"Documents de text (*.txt);;Documents PDF (*.pdf)"</span><span class="p">,</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>        <span class="n">selectedFilter</span><span class="o">=</span><span class="s2">"Documents de text (*.txt)"</span><span class="p">)</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>    <span class="n">fitxer</span> <span class="o">=</span> <span class="n">finestra_dialeg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">arxiu</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<img alt="" src="../images/color.png">
+<img alt="" src="../images/dialeg_guardar.png">
 </div>
 <div class="tabbed-block">
 <p></p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
 <span class="normal"><a href="#__codelineno-7-3">3</a></span>
 <span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="n">seleccionada</span><span class="p">,</span> <span class="n">font</span> <span class="o">=</span> <span class="n">QFontDialog</span><span class="o">.</span><span class="n">getFont</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="k">if</span> <span class="n">seleccionada</span><span class="p">:</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>        <span class="c1"># Assignem la font seleccionada al botó</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="n">color</span> <span class="o">=</span> <span class="n">QColorDialog</span><span class="o">.</span><span class="n">getColor</span><span class="p">()</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>    <span class="k">if</span> <span class="n">color</span><span class="o">.</span><span class="n">isValid</span><span class="p">():</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>        <span class="c1"># Amb la següent línia assignem el color seleccionat</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>        <span class="c1"># com a color de fons del botó a través de CSS</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">setStyleSheet</span><span class="p">(</span><span class="sa">f</span><span class="s2">"background-color: </span><span class="si">{</span><span class="n">color</span><span class="o">.</span><span class="n">name</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<img alt="" src="../images/color.png">
+</div>
+<div class="tabbed-block">
+<p></p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="n">seleccionada</span><span class="p">,</span> <span class="n">font</span> <span class="o">=</span> <span class="n">QFontDialog</span><span class="o">.</span><span class="n">getFont</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>    <span class="k">if</span> <span class="n">seleccionada</span><span class="p">:</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>        <span class="c1"># Assignem la font seleccionada al botó</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">setFont</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <img alt="" src="../images/lletra.png">
 </div>
 <div class="tabbed-block">
 <p>Amb QInputDialog podem obtenir valors de l'usuari. Text amb getText, sencers amb getInt, ... </p>
 <p>A l'exemple obtenim el mes de naixement d'una llista de mesos i l'imprimim per consola:</p>
-<p></p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span>
-<span class="normal"><a href="#__codelineno-8-7">7</a></span>
-<span class="normal"><a href="#__codelineno-8-8">8</a></span>
-<span class="normal"><a href="#__codelineno-8-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="n">mes</span><span class="p">,</span> <span class="n">seleccionat</span> <span class="o">=</span> <span class="n">QInputDialog</span><span class="o">.</span><span class="n">getItem</span><span class="p">(</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a>        <span class="bp">self</span><span class="p">,</span> <span class="s2">"Mes de naixement"</span><span class="p">,</span>  <span class="s2">"Messos"</span><span class="p">,</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a>        <span class="p">[</span><span class="s2">"Gener"</span><span class="p">,</span> <span class="s2">"Febrer"</span><span class="p">,</span> <span class="s2">"Març"</span><span class="p">,</span> <span class="s2">"Abril"</span><span class="p">,</span> <span class="s2">"Maig"</span><span class="p">,</span>
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>        <span class="s2">"Juny"</span><span class="p">,</span> <span class="s2">"Juliol"</span><span class="p">,</span> <span class="s2">"Agost"</span><span class="p">,</span> <span class="s2">"Setembre"</span><span class="p">,</span>
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>        <span class="s2">"Octubre"</span><span class="p">,</span> <span class="s2">"Novembre"</span><span class="p">,</span> <span class="s2">"Desembre"</span><span class="p">]</span>
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a>    <span class="p">)</span>
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a>    <span class="k">if</span> <span class="n">seleccionat</span><span class="p">:</span>
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">mes</span><span class="p">)</span>
+<p></p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span>
+<span class="normal"><a href="#__codelineno-9-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="k">def</span> <span class="nf">mostrar_dialeg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>    <span class="n">mes</span><span class="p">,</span> <span class="n">seleccionat</span> <span class="o">=</span> <span class="n">QInputDialog</span><span class="o">.</span><span class="n">getItem</span><span class="p">(</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a>        <span class="bp">self</span><span class="p">,</span> <span class="s2">"Mes de naixement"</span><span class="p">,</span>  <span class="s2">"Messos"</span><span class="p">,</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>        <span class="p">[</span><span class="s2">"Gener"</span><span class="p">,</span> <span class="s2">"Febrer"</span><span class="p">,</span> <span class="s2">"Març"</span><span class="p">,</span> <span class="s2">"Abril"</span><span class="p">,</span> <span class="s2">"Maig"</span><span class="p">,</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>        <span class="s2">"Juny"</span><span class="p">,</span> <span class="s2">"Juliol"</span><span class="p">,</span> <span class="s2">"Agost"</span><span class="p">,</span> <span class="s2">"Setembre"</span><span class="p">,</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>        <span class="s2">"Octubre"</span><span class="p">,</span> <span class="s2">"Novembre"</span><span class="p">,</span> <span class="s2">"Desembre"</span><span class="p">]</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>    <span class="p">)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>    <span class="k">if</span> <span class="n">seleccionat</span><span class="p">:</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">mes</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <img alt="" src="../images/mesos.png">
 </div>
 <div class="tabbed-block">
 <p>Amb QProgressDialog podem mostrar la informació de com avança un procés lent. Aquest tipus de processos s'haurien de llançar en un fil d'execució perquè la interfície no quede bloquejada en espera que el procés s'acabe. Simularem una còpia de fitxers llançada amb un fil d'execució. El codi següent engloba conceptes del mòdul de Programació de Serveis i Processos.</p>
 <p><img alt="" src="../images/progress.png"></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-9-10">10</a></span>
-<span class="normal"><a href="#__codelineno-9-11">11</a></span>
-<span class="normal"><a href="#__codelineno-9-12">12</a></span>
-<span class="normal"><a href="#__codelineno-9-13">13</a></span>
-<span class="normal"><a href="#__codelineno-9-14">14</a></span>
-<span class="normal"><a href="#__codelineno-9-15">15</a></span>
-<span class="normal"><a href="#__codelineno-9-16">16</a></span>
-<span class="normal"><a href="#__codelineno-9-17">17</a></span>
-<span class="normal"><a href="#__codelineno-9-18">18</a></span>
-<span class="normal"><a href="#__codelineno-9-19">19</a></span>
-<span class="normal"><a href="#__codelineno-9-20">20</a></span>
-<span class="normal"><a href="#__codelineno-9-21">21</a></span>
-<span class="normal"><a href="#__codelineno-9-22">22</a></span>
-<span class="normal"><a href="#__codelineno-9-23">23</a></span>
-<span class="normal"><a href="#__codelineno-9-24">24</a></span>
-<span class="normal"><a href="#__codelineno-9-25">25</a></span>
-<span class="normal"><a href="#__codelineno-9-26">26</a></span>
-<span class="normal"><a href="#__codelineno-9-27">27</a></span>
-<span class="normal"><a href="#__codelineno-9-28">28</a></span>
-<span class="normal"><a href="#__codelineno-9-29">29</a></span>
-<span class="normal"><a href="#__codelineno-9-30">30</a></span>
-<span class="normal"><a href="#__codelineno-9-31">31</a></span>
-<span class="normal"><a href="#__codelineno-9-32">32</a></span>
-<span class="normal"><a href="#__codelineno-9-33">33</a></span>
-<span class="normal"><a href="#__codelineno-9-34">34</a></span>
-<span class="normal"><a href="#__codelineno-9-35">35</a></span>
-<span class="normal"><a href="#__codelineno-9-36">36</a></span>
-<span class="normal"><a href="#__codelineno-9-37">37</a></span>
-<span class="normal"><a href="#__codelineno-9-38">38</a></span>
-<span class="normal"><a href="#__codelineno-9-39">39</a></span>
-<span class="normal"><a href="#__codelineno-9-40">40</a></span>
-<span class="normal"><a href="#__codelineno-9-41">41</a></span>
-<span class="normal"><a href="#__codelineno-9-42">42</a></span>
-<span class="normal"><a href="#__codelineno-9-43">43</a></span>
-<span class="normal"><a href="#__codelineno-9-44">44</a></span>
-<span class="normal"><a href="#__codelineno-9-45">45</a></span>
-<span class="normal"><a href="#__codelineno-9-46">46</a></span>
-<span class="normal"><a href="#__codelineno-9-47">47</a></span>
-<span class="normal"><a href="#__codelineno-9-48">48</a></span>
-<span class="normal"><a href="#__codelineno-9-49">49</a></span>
-<span class="normal"><a href="#__codelineno-9-50">50</a></span>
-<span class="normal"><a href="#__codelineno-9-51">51</a></span>
-<span class="normal"><a href="#__codelineno-9-52">52</a></span>
-<span class="normal"><a href="#__codelineno-9-53">53</a></span>
-<span class="normal"><a href="#__codelineno-9-54">54</a></span>
-<span class="normal"><a href="#__codelineno-9-55">55</a></span>
-<span class="normal"><a href="#__codelineno-9-56">56</a></span>
-<span class="normal"><a href="#__codelineno-9-57">57</a></span>
-<span class="normal"><a href="#__codelineno-9-58">58</a></span>
-<span class="normal"><a href="#__codelineno-9-59">59</a></span>
-<span class="normal"><a href="#__codelineno-9-60">60</a></span>
-<span class="normal"><a href="#__codelineno-9-61">61</a></span>
-<span class="normal"><a href="#__codelineno-9-62">62</a></span>
-<span class="normal"><a href="#__codelineno-9-63">63</a></span>
-<span class="normal"><a href="#__codelineno-9-64">64</a></span>
-<span class="normal"><a href="#__codelineno-9-65">65</a></span>
-<span class="normal"><a href="#__codelineno-9-66">66</a></span>
-<span class="normal"><a href="#__codelineno-9-67">67</a></span>
-<span class="normal"><a href="#__codelineno-9-68">68</a></span>
-<span class="normal"><a href="#__codelineno-9-69">69</a></span>
-<span class="normal"><a href="#__codelineno-9-70">70</a></span>
-<span class="normal"><a href="#__codelineno-9-71">71</a></span>
-<span class="normal"><a href="#__codelineno-9-72">72</a></span>
-<span class="normal"><a href="#__codelineno-9-73">73</a></span>
-<span class="normal"><a href="#__codelineno-9-74">74</a></span>
-<span class="normal"><a href="#__codelineno-9-75">75</a></span>
-<span class="normal"><a href="#__codelineno-9-76">76</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">import</span> <span class="nn">time</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">QThread</span><span class="p">,</span> <span class="n">Signal</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kn">from</span> <span class="nn">PySide6.QtWidgets</span> <span class="kn">import</span> <span class="p">(</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="n">QMainWindow</span><span class="p">,</span> <span class="n">QPushButton</span><span class="p">,</span> <span class="n">QProgressDialog</span><span class="p">,</span> <span class="n">QApplication</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="p">)</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="c1"># Classe Fil que simula un procés lent</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="k">class</span> <span class="nc">Hilo</span><span class="p">(</span><span class="n">QThread</span><span class="p">):</span>
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a>    <span class="c1"># Senyal que transmet un nombre sencer al seu escoltador o ranura</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a>    <span class="n">senyal</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11"></a>
-<a id="__codelineno-9-12" name="__codelineno-9-12"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Hilo</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="__codelineno-9-14" name="__codelineno-9-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cancel·lat</span> <span class="o">=</span> <span class="kc">False</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15"></a>
-<a id="__codelineno-9-16" name="__codelineno-9-16"></a>    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18"></a>
-<a id="__codelineno-9-19" name="__codelineno-9-19"></a>    <span class="c1"># Mètode que s'executa en llançar el fil</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20"></a>    <span class="c1"># Mentre no es cancel·li, el fil emetrà un senyal amb un</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21"></a>    <span class="c1"># sencer entre 0 i 10 cada 0,3 segons</span>
-<a id="__codelineno-9-22" name="__codelineno-9-22"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-9-23" name="__codelineno-9-23"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
-<a id="__codelineno-9-24" name="__codelineno-9-24"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel·lat</span><span class="p">:</span>
-<a id="__codelineno-9-25" name="__codelineno-9-25"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">senyal</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-9-26" name="__codelineno-9-26"></a>                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-<a id="__codelineno-9-27" name="__codelineno-9-27"></a>            <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-9-28" name="__codelineno-9-28"></a>                <span class="k">break</span>
-<a id="__codelineno-9-29" name="__codelineno-9-29"></a>
-<a id="__codelineno-9-30" name="__codelineno-9-30"></a><span class="k">class</span> <span class="nc">FinestraPrincipal</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
-<a id="__codelineno-9-31" name="__codelineno-9-31"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-9-32" name="__codelineno-9-32"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="__codelineno-9-33" name="__codelineno-9-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">'Aplicació amb QProgressDialog'</span><span class="p">)</span>
-<a id="__codelineno-9-34" name="__codelineno-9-34"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s1">'Clic per iniciar la còpia de fitxers'</span><span class="p">)</span>
-<a id="__codelineno-9-35" name="__codelineno-9-35"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mostrar_dialeg_progrés</span><span class="p">)</span>
-<a id="__codelineno-9-36" name="__codelineno-9-36"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="p">)</span>
-<a id="__codelineno-9-37" name="__codelineno-9-37"></a>
-<a id="__codelineno-9-38" name="__codelineno-9-38"></a>    <span class="k">def</span> <span class="nf">mostrar_dialeg_progrés</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-9-39" name="__codelineno-9-39"></a>        <span class="c1"># Deshabilitem el botó per evitar que es llanci un altre fil</span>
-<a id="__codelineno-9-40" name="__codelineno-9-40"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-9-41" name="__codelineno-9-41"></a>        <span class="c1"># Creem un QProgessDialog entre 0 i 10 i un botó Cancel·la</span>
-<a id="__codelineno-9-42" name="__codelineno-9-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progrés</span> <span class="o">=</span> <span class="n">QProgressDialog</span><span class="p">(</span>
-<a id="__codelineno-9-43" name="__codelineno-9-43"></a>            <span class="s2">"Copiant fitxers ..."</span><span class="p">,</span> <span class="s2">"Cancel·lar"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
-<a id="__codelineno-9-44" name="__codelineno-9-44"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Diàleg de progrés"</span><span class="p">)</span>
-<a id="__codelineno-9-45" name="__codelineno-9-45"></a>        <span class="c1"># Connectem el senyal cancel·lat del QProgressDialog a la ranura</span>
-<a id="__codelineno-9-46" name="__codelineno-9-46"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">canceled</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cancelar</span><span class="p">)</span>
-<a id="__codelineno-9-47" name="__codelineno-9-47"></a>
-<a id="__codelineno-9-48" name="__codelineno-9-48"></a>        <span class="c1"># Creem un fil d'execució</span>
-<a id="__codelineno-9-49" name="__codelineno-9-49"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fil</span> <span class="o">=</span> <span class="n">Fil</span><span class="p">()</span>
-<a id="__codelineno-9-50" name="__codelineno-9-50"></a>        <span class="c1"># Connectem el senyal del fil a la ranura</span>
-<a id="__codelineno-9-51" name="__codelineno-9-51"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fil</span><span class="o">.</span><span class="n">senyal</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">senyal_rebuda</span><span class="p">)</span>
-<a id="__codelineno-9-52" name="__codelineno-9-52"></a>        <span class="c1"># Llancem l'execució del fil</span>
-<a id="__codelineno-9-53" name="__codelineno-9-53"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fil</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
-<a id="__codelineno-9-54" name="__codelineno-9-54"></a>        <span class="c1"># Mostrem la barra de progrés</span>
-<a id="__codelineno-9-55" name="__codelineno-9-55"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-9-56" name="__codelineno-9-56"></a>
-<a id="__codelineno-9-57" name="__codelineno-9-57"></a>    <span class="k">def</span> <span class="nf">senyal_rebuda</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">progrés</span><span class="p">):</span>
-<a id="__codelineno-9-58" name="__codelineno-9-58"></a>        <span class="c1"># Quan rebem el senyal del fil, incrementem</span>
-<a id="__codelineno-9-59" name="__codelineno-9-59"></a>        <span class="c1"># el progrés amb el valor rebut</span>
-<a id="__codelineno-9-60" name="__codelineno-9-60"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">progrés</span><span class="p">))</span>
-<a id="__codelineno-9-61" name="__codelineno-9-61"></a>        <span class="c1"># Quan arribi al 100% esperem 0.5si tanquem el diàleg</span>
-<a id="__codelineno-9-62" name="__codelineno-9-62"></a>        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">progrés</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
-<a id="__codelineno-9-63" name="__codelineno-9-63"></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-<a id="__codelineno-9-64" name="__codelineno-9-64"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<a id="__codelineno-9-65" name="__codelineno-9-65"></a>
-<a id="__codelineno-9-66" name="__codelineno-9-66"></a>    <span class="c1"># En donar-li al botó cancel·lar del diàleg, aturem l'enviament de senyals.</span>
-<a id="__codelineno-9-67" name="__codelineno-9-67"></a>    <span class="c1"># El diàleg es tancarà i el botó el tornem a habilitar</span>
-<a id="__codelineno-9-68" name="__codelineno-9-68"></a>    <span class="k">def</span> <span class="nf">cancel·lar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-9-69" name="__codelineno-9-69"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fil</span><span class="o">.</span><span class="n">cancel·lat</span> <span class="o">=</span> <span class="kc">True</span>
-<a id="__codelineno-9-70" name="__codelineno-9-70"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-9-71" name="__codelineno-9-71"></a>
-<a id="__codelineno-9-72" name="__codelineno-9-72"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
-<a id="__codelineno-9-73" name="__codelineno-9-73"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
-<a id="__codelineno-9-74" name="__codelineno-9-74"></a>    <span class="n">finestra_principal</span> <span class="o">=</span> <span class="n">FinestraPrincipal</span><span class="p">()</span>
-<a id="__codelineno-9-75" name="__codelineno-9-75"></a>    <span class="n">finestra_principal</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-9-76" name="__codelineno-9-76"></a>    <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div>
-</div>
-</div>
-</div>
-</div>
-<h2 id="14-altres-finestres">1.4. Altres finestres</h2>
-<p>Fins ara hem vist diferents diàlegs modals que executen al seu propi bucle d'esdeveniments i bloquegen la resta de l'aplicació. Però de vegades ens pot interessar obrir una altra finestra sense bloquejar la finestra principal.</p>
-<div class="admonition warning">
-<p class="admonition-title">Finestres</p>
-<p>A Qt, qualsevol widget sense parent és una finestra. Això, a efectes pràctics, vol dir que per mostrar una finestra nova, només hem de crear un Widget i cridar al seu mètode show(). Fixa't que fins i tot podríem crear una aplicació amb diversos QMainWindows.</p>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Dues finestres en una mateixa aplicació</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
@@ -3833,44 +3650,208 @@
 <span class="normal"><a href="#__codelineno-10-35">35</a></span>
 <span class="normal"><a href="#__codelineno-10-36">36</a></span>
 <span class="normal"><a href="#__codelineno-10-37">37</a></span>
-<span class="normal"><a href="#__codelineno-10-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">from</span> <span class="nn">PySide6.QtWidgets</span> <span class="kn">import</span> <span class="p">(</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>    <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span><span class="p">,</span> <span class="n">QPushButton</span><span class="p">,</span> <span class="n">QLabel</span><span class="p">,</span> <span class="n">QVBoxLayout</span><span class="p">,</span> <span class="n">QWidget</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a>    <span class="p">)</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="k">class</span> <span class="nc">OtraVentana</span><span class="p">(</span><span class="n">QLabel</span><span class="p">):</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">"La otra ventana"</span><span class="p">)</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a>
+<span class="normal"><a href="#__codelineno-10-38">38</a></span>
+<span class="normal"><a href="#__codelineno-10-39">39</a></span>
+<span class="normal"><a href="#__codelineno-10-40">40</a></span>
+<span class="normal"><a href="#__codelineno-10-41">41</a></span>
+<span class="normal"><a href="#__codelineno-10-42">42</a></span>
+<span class="normal"><a href="#__codelineno-10-43">43</a></span>
+<span class="normal"><a href="#__codelineno-10-44">44</a></span>
+<span class="normal"><a href="#__codelineno-10-45">45</a></span>
+<span class="normal"><a href="#__codelineno-10-46">46</a></span>
+<span class="normal"><a href="#__codelineno-10-47">47</a></span>
+<span class="normal"><a href="#__codelineno-10-48">48</a></span>
+<span class="normal"><a href="#__codelineno-10-49">49</a></span>
+<span class="normal"><a href="#__codelineno-10-50">50</a></span>
+<span class="normal"><a href="#__codelineno-10-51">51</a></span>
+<span class="normal"><a href="#__codelineno-10-52">52</a></span>
+<span class="normal"><a href="#__codelineno-10-53">53</a></span>
+<span class="normal"><a href="#__codelineno-10-54">54</a></span>
+<span class="normal"><a href="#__codelineno-10-55">55</a></span>
+<span class="normal"><a href="#__codelineno-10-56">56</a></span>
+<span class="normal"><a href="#__codelineno-10-57">57</a></span>
+<span class="normal"><a href="#__codelineno-10-58">58</a></span>
+<span class="normal"><a href="#__codelineno-10-59">59</a></span>
+<span class="normal"><a href="#__codelineno-10-60">60</a></span>
+<span class="normal"><a href="#__codelineno-10-61">61</a></span>
+<span class="normal"><a href="#__codelineno-10-62">62</a></span>
+<span class="normal"><a href="#__codelineno-10-63">63</a></span>
+<span class="normal"><a href="#__codelineno-10-64">64</a></span>
+<span class="normal"><a href="#__codelineno-10-65">65</a></span>
+<span class="normal"><a href="#__codelineno-10-66">66</a></span>
+<span class="normal"><a href="#__codelineno-10-67">67</a></span>
+<span class="normal"><a href="#__codelineno-10-68">68</a></span>
+<span class="normal"><a href="#__codelineno-10-69">69</a></span>
+<span class="normal"><a href="#__codelineno-10-70">70</a></span>
+<span class="normal"><a href="#__codelineno-10-71">71</a></span>
+<span class="normal"><a href="#__codelineno-10-72">72</a></span>
+<span class="normal"><a href="#__codelineno-10-73">73</a></span>
+<span class="normal"><a href="#__codelineno-10-74">74</a></span>
+<span class="normal"><a href="#__codelineno-10-75">75</a></span>
+<span class="normal"><a href="#__codelineno-10-76">76</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">import</span> <span class="nn">time</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="kn">from</span> <span class="nn">PySide6.QtCore</span> <span class="kn">import</span> <span class="n">QThread</span><span class="p">,</span> <span class="n">Signal</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kn">from</span> <span class="nn">PySide6.QtWidgets</span> <span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>    <span class="n">QMainWindow</span><span class="p">,</span> <span class="n">QPushButton</span><span class="p">,</span> <span class="n">QProgressDialog</span><span class="p">,</span> <span class="n">QApplication</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="p">)</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c1"># Classe Fil que simula un procés lent</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="k">class</span> <span class="nc">Hilo</span><span class="p">(</span><span class="n">QThread</span><span class="p">):</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>    <span class="c1"># Senyal que transmet un nombre sencer al seu escoltador o ranura</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>    <span class="n">senyal</span> <span class="o">=</span> <span class="n">Signal</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
 <a id="__codelineno-10-11" name="__codelineno-10-11"></a>
-<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="k">class</span> <span class="nc">VentanaPrincipal</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13"></a>
-<a id="__codelineno-10-14" name="__codelineno-10-14"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Referència nula</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Aplicación con dos ventanas"</span><span class="p">)</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">"Mostrar/ocultar otra ventana"</span><span class="p">)</span>
-<a id="__codelineno-10-19" name="__codelineno-10-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mostrar_otra_ventana</span><span class="p">)</span>
-<a id="__codelineno-10-20" name="__codelineno-10-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="p">)</span>
-<a id="__codelineno-10-21" name="__codelineno-10-21"></a>
-<a id="__codelineno-10-22" name="__codelineno-10-22"></a>    <span class="k">def</span> <span class="nf">mostrar_otra_ventana</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<a id="__codelineno-10-23" name="__codelineno-10-23"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-<a id="__codelineno-10-24" name="__codelineno-10-24"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span> <span class="o">=</span> <span class="n">OtraVentana</span><span class="p">()</span>
-<a id="__codelineno-10-25" name="__codelineno-10-25"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">())</span>
-<a id="__codelineno-10-26" name="__codelineno-10-26"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-10-27" name="__codelineno-10-27"></a>        <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-10-28" name="__codelineno-10-28"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">isHidden</span><span class="p">():</span>
-<a id="__codelineno-10-29" name="__codelineno-10-29"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">())</span>
-<a id="__codelineno-10-30" name="__codelineno-10-30"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-10-31" name="__codelineno-10-31"></a>            <span class="k">else</span><span class="p">:</span>
-<a id="__codelineno-10-32" name="__codelineno-10-32"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
-<a id="__codelineno-10-33" name="__codelineno-10-33"></a>
-<a id="__codelineno-10-34" name="__codelineno-10-34"></a>
-<a id="__codelineno-10-35" name="__codelineno-10-35"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
-<a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="n">ventana_principal</span> <span class="o">=</span> <span class="n">VentanaPrincipal</span><span class="p">()</span>
-<a id="__codelineno-10-37" name="__codelineno-10-37"></a><span class="n">ventana_principal</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<a id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a>        <span class="nb">super</span><span class="p">(</span><span class="n">Hilo</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">cancel·lat</span> <span class="o">=</span> <span class="kc">False</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a>    <span class="k">def</span> <span class="fm">__del__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">wait</span><span class="p">()</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a>    <span class="c1"># Mètode que s'executa en llançar el fil</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20"></a>    <span class="c1"># Mentre no es cancel·li, el fil emetrà un senyal amb un</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a>    <span class="c1"># sencer entre 0 i 10 cada 0,3 segons</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a>    <span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">cancel·lat</span><span class="p">:</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">senyal</span><span class="o">.</span><span class="n">emit</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26"></a>                <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28"></a>                <span class="k">break</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29"></a>
+<a id="__codelineno-10-30" name="__codelineno-10-30"></a><span class="k">class</span> <span class="nc">FinestraPrincipal</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-10-33" name="__codelineno-10-33"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s1">'Aplicació amb QProgressDialog'</span><span class="p">)</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s1">'Clic per iniciar la còpia de fitxers'</span><span class="p">)</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mostrar_dialeg_progrés</span><span class="p">)</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="p">)</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37"></a>
+<a id="__codelineno-10-38" name="__codelineno-10-38"></a>    <span class="k">def</span> <span class="nf">mostrar_dialeg_progrés</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-10-39" name="__codelineno-10-39"></a>        <span class="c1"># Deshabilitem el botó per evitar que es llanci un altre fil</span>
+<a id="__codelineno-10-40" name="__codelineno-10-40"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-10-41" name="__codelineno-10-41"></a>        <span class="c1"># Creem un QProgessDialog entre 0 i 10 i un botó Cancel·la</span>
+<a id="__codelineno-10-42" name="__codelineno-10-42"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progrés</span> <span class="o">=</span> <span class="n">QProgressDialog</span><span class="p">(</span>
+<a id="__codelineno-10-43" name="__codelineno-10-43"></a>            <span class="s2">"Copiant fitxers ..."</span><span class="p">,</span> <span class="s2">"Cancel·lar"</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span>
+<a id="__codelineno-10-44" name="__codelineno-10-44"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Diàleg de progrés"</span><span class="p">)</span>
+<a id="__codelineno-10-45" name="__codelineno-10-45"></a>        <span class="c1"># Connectem el senyal cancel·lat del QProgressDialog a la ranura</span>
+<a id="__codelineno-10-46" name="__codelineno-10-46"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">canceled</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">cancelar</span><span class="p">)</span>
+<a id="__codelineno-10-47" name="__codelineno-10-47"></a>
+<a id="__codelineno-10-48" name="__codelineno-10-48"></a>        <span class="c1"># Creem un fil d'execució</span>
+<a id="__codelineno-10-49" name="__codelineno-10-49"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fil</span> <span class="o">=</span> <span class="n">Fil</span><span class="p">()</span>
+<a id="__codelineno-10-50" name="__codelineno-10-50"></a>        <span class="c1"># Connectem el senyal del fil a la ranura</span>
+<a id="__codelineno-10-51" name="__codelineno-10-51"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fil</span><span class="o">.</span><span class="n">senyal</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">senyal_rebuda</span><span class="p">)</span>
+<a id="__codelineno-10-52" name="__codelineno-10-52"></a>        <span class="c1"># Llancem l'execució del fil</span>
+<a id="__codelineno-10-53" name="__codelineno-10-53"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fil</span><span class="o">.</span><span class="n">start</span><span class="p">()</span>
+<a id="__codelineno-10-54" name="__codelineno-10-54"></a>        <span class="c1"># Mostrem la barra de progrés</span>
+<a id="__codelineno-10-55" name="__codelineno-10-55"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-10-56" name="__codelineno-10-56"></a>
+<a id="__codelineno-10-57" name="__codelineno-10-57"></a>    <span class="k">def</span> <span class="nf">senyal_rebuda</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">progrés</span><span class="p">):</span>
+<a id="__codelineno-10-58" name="__codelineno-10-58"></a>        <span class="c1"># Quan rebem el senyal del fil, incrementem</span>
+<a id="__codelineno-10-59" name="__codelineno-10-59"></a>        <span class="c1"># el progrés amb el valor rebut</span>
+<a id="__codelineno-10-60" name="__codelineno-10-60"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">setValue</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">progrés</span><span class="p">))</span>
+<a id="__codelineno-10-61" name="__codelineno-10-61"></a>        <span class="c1"># Quan arribi al 100% esperem 0.5si tanquem el diàleg</span>
+<a id="__codelineno-10-62" name="__codelineno-10-62"></a>        <span class="k">if</span> <span class="nb">int</span><span class="p">(</span><span class="n">progrés</span><span class="p">)</span> <span class="o">==</span> <span class="mi">10</span><span class="p">:</span>
+<a id="__codelineno-10-63" name="__codelineno-10-63"></a>            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<a id="__codelineno-10-64" name="__codelineno-10-64"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">barra_progreso</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<a id="__codelineno-10-65" name="__codelineno-10-65"></a>
+<a id="__codelineno-10-66" name="__codelineno-10-66"></a>    <span class="c1"># En donar-li al botó cancel·lar del diàleg, aturem l'enviament de senyals.</span>
+<a id="__codelineno-10-67" name="__codelineno-10-67"></a>    <span class="c1"># El diàleg es tancarà i el botó el tornem a habilitar</span>
+<a id="__codelineno-10-68" name="__codelineno-10-68"></a>    <span class="k">def</span> <span class="nf">cancel·lar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-10-69" name="__codelineno-10-69"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">fil</span><span class="o">.</span><span class="n">cancel·lat</span> <span class="o">=</span> <span class="kc">True</span>
+<a id="__codelineno-10-70" name="__codelineno-10-70"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">setEnabled</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-10-71" name="__codelineno-10-71"></a>
+<a id="__codelineno-10-72" name="__codelineno-10-72"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
+<a id="__codelineno-10-73" name="__codelineno-10-73"></a>    <span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
+<a id="__codelineno-10-74" name="__codelineno-10-74"></a>    <span class="n">finestra_principal</span> <span class="o">=</span> <span class="n">FinestraPrincipal</span><span class="p">()</span>
+<a id="__codelineno-10-75" name="__codelineno-10-75"></a>    <span class="n">finestra_principal</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-10-76" name="__codelineno-10-76"></a>    <span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+</div>
+</div>
+</div>
+</div>
+<h2 id="14-altres-finestres">1.4. Altres finestres</h2>
+<p>Fins ara hem vist diferents diàlegs modals que executen al seu propi bucle d'esdeveniments i bloquegen la resta de l'aplicació. Però de vegades ens pot interessar obrir una altra finestra sense bloquejar la finestra principal.</p>
+<div class="admonition warning">
+<p class="admonition-title">Finestres</p>
+<p>A Qt, qualsevol widget sense parent és una finestra. Això, a efectes pràctics, vol dir que per mostrar una finestra nova, només hem de crear un Widget i cridar al seu mètode show(). Fixa't que fins i tot podríem crear una aplicació amb diversos QMainWindows.</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Dues finestres en una mateixa aplicació</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span>
+<span class="normal"><a href="#__codelineno-11-19">19</a></span>
+<span class="normal"><a href="#__codelineno-11-20">20</a></span>
+<span class="normal"><a href="#__codelineno-11-21">21</a></span>
+<span class="normal"><a href="#__codelineno-11-22">22</a></span>
+<span class="normal"><a href="#__codelineno-11-23">23</a></span>
+<span class="normal"><a href="#__codelineno-11-24">24</a></span>
+<span class="normal"><a href="#__codelineno-11-25">25</a></span>
+<span class="normal"><a href="#__codelineno-11-26">26</a></span>
+<span class="normal"><a href="#__codelineno-11-27">27</a></span>
+<span class="normal"><a href="#__codelineno-11-28">28</a></span>
+<span class="normal"><a href="#__codelineno-11-29">29</a></span>
+<span class="normal"><a href="#__codelineno-11-30">30</a></span>
+<span class="normal"><a href="#__codelineno-11-31">31</a></span>
+<span class="normal"><a href="#__codelineno-11-32">32</a></span>
+<span class="normal"><a href="#__codelineno-11-33">33</a></span>
+<span class="normal"><a href="#__codelineno-11-34">34</a></span>
+<span class="normal"><a href="#__codelineno-11-35">35</a></span>
+<span class="normal"><a href="#__codelineno-11-36">36</a></span>
+<span class="normal"><a href="#__codelineno-11-37">37</a></span>
+<span class="normal"><a href="#__codelineno-11-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">from</span> <span class="nn">PySide6.QtWidgets</span> <span class="kn">import</span> <span class="p">(</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>    <span class="n">QApplication</span><span class="p">,</span> <span class="n">QMainWindow</span><span class="p">,</span> <span class="n">QPushButton</span><span class="p">,</span> <span class="n">QLabel</span><span class="p">,</span> <span class="n">QVBoxLayout</span><span class="p">,</span> <span class="n">QWidget</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>    <span class="p">)</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="k">class</span> <span class="nc">OtraVentana</span><span class="p">(</span><span class="n">QLabel</span><span class="p">):</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setText</span><span class="p">(</span><span class="s2">"La otra ventana"</span><span class="p">)</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="k">class</span> <span class="nc">VentanaPrincipal</span><span class="p">(</span><span class="n">QMainWindow</span><span class="p">):</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># Referència nula</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setWindowTitle</span><span class="p">(</span><span class="s2">"Aplicación con dos ventanas"</span><span class="p">)</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span> <span class="o">=</span> <span class="n">QPushButton</span><span class="p">(</span><span class="s2">"Mostrar/ocultar otra ventana"</span><span class="p">)</span>
+<a id="__codelineno-11-19" name="__codelineno-11-19"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="o">.</span><span class="n">clicked</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">mostrar_otra_ventana</span><span class="p">)</span>
+<a id="__codelineno-11-20" name="__codelineno-11-20"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">setCentralWidget</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">boton</span><span class="p">)</span>
+<a id="__codelineno-11-21" name="__codelineno-11-21"></a>
+<a id="__codelineno-11-22" name="__codelineno-11-22"></a>    <span class="k">def</span> <span class="nf">mostrar_otra_ventana</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-11-23" name="__codelineno-11-23"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-11-24" name="__codelineno-11-24"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span> <span class="o">=</span> <span class="n">OtraVentana</span><span class="p">()</span>
+<a id="__codelineno-11-25" name="__codelineno-11-25"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">())</span>
+<a id="__codelineno-11-26" name="__codelineno-11-26"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-11-27" name="__codelineno-11-27"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-11-28" name="__codelineno-11-28"></a>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">isHidden</span><span class="p">():</span>
+<a id="__codelineno-11-29" name="__codelineno-11-29"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">())</span>
+<a id="__codelineno-11-30" name="__codelineno-11-30"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-11-31" name="__codelineno-11-31"></a>            <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-11-32" name="__codelineno-11-32"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">otra_ventana</span><span class="o">.</span><span class="n">hide</span><span class="p">()</span>
+<a id="__codelineno-11-33" name="__codelineno-11-33"></a>
+<a id="__codelineno-11-34" name="__codelineno-11-34"></a>
+<a id="__codelineno-11-35" name="__codelineno-11-35"></a><span class="n">app</span> <span class="o">=</span> <span class="n">QApplication</span><span class="p">([])</span>
+<a id="__codelineno-11-36" name="__codelineno-11-36"></a><span class="n">ventana_principal</span> <span class="o">=</span> <span class="n">VentanaPrincipal</span><span class="p">()</span>
+<a id="__codelineno-11-37" name="__codelineno-11-37"></a><span class="n">ventana_principal</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<a id="__codelineno-11-38" name="__codelineno-11-38"></a><span class="n">app</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 </div></div>
 

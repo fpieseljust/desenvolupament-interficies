@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#practica-1-politica-de-mida-politica-de-mida" class="md-skip">
+        <a href="#practica-1-politica-de-mida-sizepolicy" class="md-skip">
           Skip to content
         </a>
       
@@ -260,80 +260,16 @@
   
   
   
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Examens
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Examens
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../../../../examens/primera/model%20a/" class="md-nav__link">
+      <a href="../../../../examens/2a%2024-25/enunciat/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Examen 1a presencial- Model A
+    Examen 2a semipresencial
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../../examens/primera/model%20b/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Examen 1a presencial- Model B
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1983,13 +1919,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#practica-1-politica-de-mida-politica-de-mida" class="md-nav__link">
+  <a href="#practica-1-politica-de-mida-sizepolicy" class="md-nav__link">
     <span class="md-ellipsis">
-      Pràctica 1: Política de mida (Política de mida)
+      Pràctica 1: Política de mida (sizePolicy)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Pràctica 1: Política de mida (Política de mida)">
+    <nav class="md-nav" aria-label="Pràctica 1: Política de mida (sizePolicy)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3045,13 +2981,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#practica-1-politica-de-mida-politica-de-mida" class="md-nav__link">
+  <a href="#practica-1-politica-de-mida-sizepolicy" class="md-nav__link">
     <span class="md-ellipsis">
-      Pràctica 1: Política de mida (Política de mida)
+      Pràctica 1: Política de mida (sizePolicy)
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Pràctica 1: Política de mida (Política de mida)">
+    <nav class="md-nav" aria-label="Pràctica 1: Política de mida (sizePolicy)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -3103,7 +3039,7 @@
 
   <h1>2 - Pràctiques</h1>
 
-<div><h2 id="practica-1-politica-de-mida-politica-de-mida">Pràctica 1: Política de mida (Política de mida)</h2>
+<div><h2 id="practica-1-politica-de-mida-sizepolicy">Pràctica 1: Política de mida (sizePolicy)</h2>
 <p>Com hem vist en els continguts teòrics, l'ús dels diferents tipus de layout i el seu nedament no sempre és suficient per aconseguir el comportament desitjat de la interfície quan la finestra es redimensiona. Per això Qt incorpora altres mecanismes, com els espaiadors o les polítiques de mida.</p>
 <p>La política de mida d'un control està formada per dos grups de valors: la configuració (horitzontal i vertical) i la política que s'aplicarà al component quan es redimensione la finestra (i també es distingeix entre política horitzontal i vertical).</p>
 <h3 id="ajust-horitzontal-i-vertical">Ajust horitzontal i vertical</h3>
@@ -3114,16 +3050,16 @@
 </div>
 <h3 id="politica-horitzontal-i-vertical">Política horitzontal i vertical</h3>
 <p>La política determina com es canviarà la mida del component quan es redimensioni la finestra, i estarà condicionada per la mida ideal del component (conegut comconsell de mida). Aquesta mida ideal la determina internament Qt per a cada component en funció del tipus de component i del seu contingut.</p>
-<p>Els diferents valors que pot prendre la política sorgeixen per la combinació de quatre indicadors obanderes:</p>
+<p>Els diferents valors que pot prendre la política sorgeixen per la combinació de quatre indicadors o banderes:</p>
 <ul>
-<li><strong>GrowFlag</strong>: el component podrà créixer per sobre de la seva mida ideal si cal.</li>
-<li><strong>Expandir bandera</strong>: el component ha de créixer tot el que sigui possible.</li>
-<li><strong>ShrinkFlag</strong>: el component pot encongir per sota de la seva mida ideal si cal.</li>
-<li><strong>Ignora la bandera</strong>: s'ignora la mida ideal, i el component tindrà tot l'espai possible.</li>
+<li><strong>Grow</strong>: el component podrà créixer per sobre de la seva mida ideal si cal.</li>
+<li><strong>Expanding</strong>: el component ha de créixer tot el que sigui possible.</li>
+<li><strong>Shrink</strong>: el component pot encongir per sota de la seva mida ideal si cal.</li>
+<li><strong>Ignore</strong>: s'ignora la mida ideal, i el component tindrà tot l'espai possible.</li>
 </ul>
 <p>Les diferents combinacions d'aquests <em>flags</em> donen lloc als possibles valors que podem donar a la política horitzontal i vertical:</p>
 <ul>
-<li><strong>Fixed</strong>: No se aplica ningún flag, por lo que la única alternativa es el tamaño ideal.</li>
+<li><strong>Fixed</strong>: No s'aplica ningún flag, per lo que la única alternativa és el tamany ideal.</li>
 <li><strong>Minimum</strong>: GrowFlag</li>
 <li><strong>Maximum</strong>: ShrinkFlag</li>
 <li><strong>Preferred</strong>: GrowFlag | ShrinkFlag</li>
@@ -3141,7 +3077,7 @@
 <li>El quadre de text tindrà un alt fix (que serà lalt recomanat).</li>
 <li>El botóAcceptartindrà el doble dample que els botonsCancel · lariAplicar.</li>
 </ul>
-<p>Els fitxers DI_U03_CPE_1_E_01.png i DI_U03_CPE_1_E_02.png contenen captures de pantalla de l'aplicació amb diferents mides de finestra.</p>
+<p>Les següents imatges son captures de pantalla de l'aplicació amb diferents mides de finestra.</p>
 <p><img alt="calculadora1" src="../images/calculadora1.png" style="display: block;margin-left: auto;margin-right: auto;width: 40%;"></p>
 <p><img alt="calculadora2" src="../images/calculadora2.png" style="display: block;margin-left: auto;margin-right: auto;width: 80%;"></p>
 <h2 id="practica-2-el-sistema-de-recursos-de-qt">Pràctica 2: El sistema de recursos de Qt</h2>
