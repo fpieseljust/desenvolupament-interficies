@@ -261,7 +261,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../examens/2a%20model%20a%2024-25/enunciat/" class="md-nav__link">
+      <a href="../../../../../examens/2a model a 24-25/enunciat.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -281,7 +281,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../examens/2a%20model%20b%2024-25/enunciat/" class="md-nav__link">
+      <a href="../../../../../examens/2a model b 24-25/enunciat.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3177,7 +3177,86 @@
 <a id="__codelineno-2-55" name="__codelineno-2-55"></a>
 <a id="__codelineno-2-56" name="__codelineno-2-56"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">'__main__'</span><span class="p">:</span>
 <a id="__codelineno-2-57" name="__codelineno-2-57"></a>    <span class="n">main</span><span class="p">()</span>
-</code></pre></div></td></tr></table></div></div>
+</code></pre></div></td></tr></table></div>
+<div class="admonition success">
+<p class="admonition-title">Solució</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span>
+<span class="normal"><a href="#__codelineno-3-27">27</a></span>
+<span class="normal"><a href="#__codelineno-3-28">28</a></span>
+<span class="normal"><a href="#__codelineno-3-29">29</a></span>
+<span class="normal"><a href="#__codelineno-3-30">30</a></span>
+<span class="normal"><a href="#__codelineno-3-31">31</a></span>
+<span class="normal"><a href="#__codelineno-3-32">32</a></span>
+<span class="normal"><a href="#__codelineno-3-33">33</a></span>
+<span class="normal"><a href="#__codelineno-3-34">34</a></span>
+<span class="normal"><a href="#__codelineno-3-35">35</a></span>
+<span class="normal"><a href="#__codelineno-3-36">36</a></span>
+<span class="normal"><a href="#__codelineno-3-37">37</a></span>
+<span class="normal"><a href="#__codelineno-3-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">bcrypt</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="kn">import</span> <span class="nn">os</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="kn">from</span> <span class="nn">PySide6.QtSql</span> <span class="kn">import</span> <span class="n">QSqlQuery</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="kn">from</span> <span class="nn">main</span> <span class="kn">import</span> <span class="n">CreateUserDialog</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="k">def</span> <span class="nf">test_login</span><span class="p">(</span><span class="n">qtbot</span><span class="p">):</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="n">database_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> <span class="s1">'test_users.db'</span><span class="p">)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>    <span class="n">login</span> <span class="o">=</span> <span class="n">CreateUserDialog</span><span class="p">(</span><span class="n">database_path</span><span class="p">)</span>    
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>    <span class="n">qtbot</span><span class="o">.</span><span class="n">addWidget</span><span class="p">(</span><span class="n">login</span><span class="p">)</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>    <span class="c1"># Omple els camps de text</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a>    <span class="n">user</span> <span class="o">=</span> <span class="s1">'user3'</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a>    <span class="n">qtbot</span><span class="o">.</span><span class="n">keyClicks</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">user</span><span class="p">,</span> <span class="n">user</span><span class="p">)</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>    <span class="n">password</span> <span class="o">=</span> <span class="s1">'password3'</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a>    <span class="n">qtbot</span><span class="o">.</span><span class="n">keyClicks</span><span class="p">(</span><span class="n">login</span><span class="o">.</span><span class="n">password</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a>    <span class="n">login</span><span class="o">.</span><span class="n">create_database</span><span class="p">()</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a>    <span class="n">login</span><span class="o">.</span><span class="n">btn_create</span><span class="o">.</span><span class="n">click</span><span class="p">()</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a>    <span class="k">if</span> <span class="n">login</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">open</span><span class="p">():</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a>        <span class="n">query</span> <span class="o">=</span> <span class="n">QSqlQuery</span><span class="p">()</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27"></a>        <span class="n">query</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="s2">"SELECT user, password FROM users WHERE user = ?"</span><span class="p">)</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28"></a>        <span class="n">query</span><span class="o">.</span><span class="n">addBindValue</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29"></a>        <span class="n">query</span><span class="o">.</span><span class="n">exec</span><span class="p">()</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30"></a>        <span class="n">query</span><span class="o">.</span><span class="n">next</span><span class="p">()</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31"></a>        <span class="n">user_db</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32"></a>        <span class="n">hashed_password_db</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33"></a>
+<a id="__codelineno-3-34" name="__codelineno-3-34"></a>        <span class="c1"># assert bcrypt.checkpw(password_db.encode('utf-8'), hashed_password.encode('utf-8')):</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35"></a>        <span class="k">assert</span> <span class="n">user_db</span> <span class="o">==</span> <span class="n">user</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36"></a>        <span class="k">assert</span> <span class="n">bcrypt</span><span class="o">.</span><span class="n">checkpw</span><span class="p">(</span><span class="n">password</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">),</span> <span class="n">hashed_password_db</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'utf-8'</span><span class="p">))</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37"></a>
+<a id="__codelineno-3-38" name="__codelineno-3-38"></a>    <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">database_path</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+</div></div>
 
 
 
